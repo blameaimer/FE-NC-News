@@ -1,38 +1,79 @@
 .App {
   text-align: center;
+  background-color: rgb(41, 41, 41);
+}
+body {
+  padding-top: 60px;
+  padding-bottom: 55px;
+  
+}
+.ncicon{
+  font-size:1.1em;
+  color: rgb(255, 0, 76);
+}
+.title-main{
+  color: rgb(0, 183, 255);
+  font-size: 1.8em;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-left: 0.5em;
+}
+.title{
+  color: rgb(0, 183, 255);
+  font-size: 1.8em;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 0;
+
+}
+.date-main{
+  color: rgb(0, 153, 255);
+  font-size: 13px;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-left: 1.2em;
+}
+.date{
+  color: rgb(0, 153, 255);
+  font-size: 13px;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 0;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.author-comments{
+  color: rgb(255, 0, 106);
+  font-size: 1em;
+  text-align: left;
+  font-weight: bold;
+  padding-left: 1em;
+  margin-bottom: 2px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.comment-icon{
+margin-left: 0.5em;
+margin-right: 0.5em;
+width:25%;
+}
+.user{ 
+  margin-bottom: 0px;
+  margin-left:10em;
+  
+}
+.upvote{
+  margin-left:0.5em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nav-link :hover{
+    background-color:blue;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-link> .active > a { 
+  background-color: #EAB126 ; 
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Welcome{
+  color: rgb(255, 0, 76);
 }
