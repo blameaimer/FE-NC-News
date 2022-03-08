@@ -3,7 +3,7 @@
   background-color: rgb(41, 41, 41);
 }
 body {
-  padding-top: 50px;
+  padding-top: 60px;
   padding-bottom: 55px;
   
 }
@@ -65,8 +65,15 @@ width:25%;
 }
 .upvote{
   margin-left:0.5em;
-
- 
 }
 
+.nav-link :hover{
+    background-color:blue;
+}
 
+.navbar-link> .active > a { 
+  background-color: #EAB126 ; 
+}
+.Welcome{
+  color: rgb(255, 0, 76);
+}

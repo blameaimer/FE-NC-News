@@ -6,7 +6,7 @@ import{FaNewspaper} from 'react-icons/fa'
 import {FiTriangle} from 'react-icons/fi'
 import {CgProfile} from 'react-icons/cg'
 
-export default function NavBarTop() {
+export default function NavBarTop({topic=""}) {
 let username = "Guest"
   return (
     <>
@@ -14,7 +14,7 @@ let username = "Guest"
 
           <Container>
             <Navbar fixed="top"  bg="dark" variant="dark">
-              <Nav className="topicbar">
+              <Nav className="topicbar" activeKey={topic==="" ? "/articles" : topic==="/" ? `/` : `/articles/${topic}` }>
               <Nav.Link href="/">
               <b className="ncicon"><FaNewspaper size={28}/>NC News</b>
             </Nav.Link>

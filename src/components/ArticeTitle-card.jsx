@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export default function ArticelTitleCard ({articles}){
 
 return(
+
 <Card
     bg='dark'
     text='light'
@@ -12,6 +13,7 @@ return(
     
     className={`${articles.article_id}`}
   >
+    <Card.Header><h1 className="Welcome">Welcome to NC News</h1></Card.Header>
     <Card.Title >
     <Link style={{ textDecoration: 'none' }} to={{
     pathname: `${articles.article_id}`
