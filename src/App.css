@@ -7,26 +7,66 @@ body {
   padding-bottom: 55px;
   
 }
-
+.ncicon{
+  font-size:1.1em;
+  color: rgb(255, 0, 76);
+}
+.title-main{
+  color: rgb(0, 183, 255);
+  font-size: 1.8em;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-left: 0.5em;
+}
 .title{
+  color: rgb(0, 183, 255);
   font-size: 1.8em;
   text-align: left;
   font-weight: bold;
   margin-bottom: 0;
 
 }
-.date{
+.date-main{
+  color: rgb(0, 153, 255);
   font-size: 13px;
   text-align: left;
   font-weight: bold;
   margin-bottom: 0;
-
+  margin-left: 1.2em;
+}
+.date{
+  color: rgb(0, 153, 255);
+  font-size: 13px;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 0;
+  
 }
 
-
 .author-comments{
+  color: rgb(255, 0, 106);
   font-size: 1em;
   text-align: left;
   font-weight: bold;
+  padding-left: 1em;
   margin-bottom: 2px;
 }
+
+.comment-icon{
+margin-left: 0.5em;
+margin-right: 0.5em;
+width:25%;
+}
+.user{ 
+  margin-bottom: 0px;
+  margin-left:10em;
+  
+}
+.upvote{
+  margin-left:0.5em;
+
+ 
+}
+
+

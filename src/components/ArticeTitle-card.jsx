@@ -1,6 +1,7 @@
 import {Card} from "react-bootstrap";
-
-
+import {FaRegCommentDots} from 'react-icons/fa'
+import {MdOutlineCreate,MdUpdate} from 'react-icons/md'
+import { Link } from "react-router-dom";
 export default function ArticelTitleCard ({articles}){
 
 return(
@@ -12,10 +13,15 @@ return(
     className={`${articles.article_id}`}
   >
     <Card.Title >
-      <p className="title-main">{articles.title}</p></Card.Title>
+    <Link style={{ textDecoration: 'none' }} to={{
+    pathname: `${articles.article_id}`
+  }}> <p className="title-main">{articles.title}</p>
+  </Link></Card.Title>
+  
+      <p className="date-main"><MdUpdate/>{articles.created_at.slice(0,-14)}</p>
     <Card.Footer
     >  
-       <p className="author-comments">{articles.author}  {articles.comment_count} {articles.created_at.slice(0,-14)}</p> {articles.votes === 0 ? "" : articles.votes } 
+       <p className="author-comments"><MdOutlineCreate/>{articles.author} <FaRegCommentDots/> {articles.comment_count} </p> {articles.votes === 0 ? "" : articles.votes } 
     </Card.Footer>
   </Card>
 )
