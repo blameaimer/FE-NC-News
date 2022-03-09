@@ -10,9 +10,8 @@ function App() {
     <div className="App">
       <Routes>
     <Route path ="/" element={<HomeArticle/>}/>    
-    <Route path={`/articles/:topic`} element={<ArticlesList />} />
-    <Route path={`articles/:topic/:id`} element={<Articel/>}/>
-    <Route path={`articles/:id`} element={<Articel/>}/>
+    <Route path="/articles/:topic" element={<ArticlesList />} />
+    <Route path="/articles/:topic/:id" element={<Articel/>}/>
 
       </Routes>
     </div>
