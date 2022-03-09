@@ -1,10 +1,30 @@
-  import {Card} from "react-bootstrap";
+  import {Card,Button} from "react-bootstrap";
   import {FaRegCommentDots} from 'react-icons/fa'
   import {MdOutlineCreate,MdUpdate} from 'react-icons/md'
   import {BiUpvote,BiDownvote} from 'react-icons/bi'
   import { Link } from "react-router-dom";
+  import { useState,useEffect } from "react";
 export const ArticelCard =({articles})=>{
+  const [votes,setVotes]=useState(0)
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    setIsLoading(true);
+     
+      setVotes(articles.votes);
+      setIsLoading(false);
+    
+  }, [articles.votes]);
+  const handleUpVote = (id) => {
 
+setVotes((currVote)=>currVote+1)
+console.log(votes)
+console.log(articles.votes,id)
+ };
+  // const handleDownVote = () => {
+   
+
+  // };
+  if (isLoading) return <p>loading..</p>;
 return(
 <Card
     bg='dark'
@@ -25,7 +45,7 @@ return(
     <Card.Footer
     >
      
-       <p className="author-comments"><MdOutlineCreate/>{articles.author} <FaRegCommentDots className="comment-icon"/>  {articles.votes === 0 ? "" : articles.votes} <BiUpvote className="upvote"/> <BiDownvote className="downvote"/></p>  
+       <p className="author-comments"><MdOutlineCreate/>{articles.author} <FaRegCommentDots className="comment-icon"/>  {articles.votes} <Button onClick={()=>handleUpVote(articles.article_id)}variant="dark"> <BiUpvote className="upvote"/></Button> <Button variant="dark"><BiDownvote className="downvote"/></Button></p>  
 
     </Card.Footer>
   </Card>
