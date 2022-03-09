@@ -16,7 +16,7 @@ return(
     <Card.Header><h1 className="Welcome">Welcome to NC News</h1></Card.Header>
     <Card.Title >
     <Link style={{ textDecoration: 'none' }} to={{
-    pathname: `${articles.article_id}`
+    pathname: `/articles/${articles.topic}/${articles.article_id}`
   }}> <p className="title-main">{articles.title}</p>
   </Link></Card.Title>
   

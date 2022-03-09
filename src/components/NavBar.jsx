@@ -21,7 +21,7 @@ let username = "Guest"
                 <Nav.Link href="/articles/coding">Coding</Nav.Link>
                 <Nav.Link href="/articles/football">Football</Nav.Link>
                 <Nav.Link href="/articles/cooking">Cooking</Nav.Link>
-                <Nav.Link href="/articles">All</Nav.Link>
+                <Nav.Link href="/articles/all">All</Nav.Link>
               </Nav>
             </Navbar>
           </Container>
