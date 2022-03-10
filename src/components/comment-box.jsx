@@ -1,13 +1,29 @@
 import {Card} from "react-bootstrap";
 import {FaRegCommentDots} from 'react-icons/fa'
-import {MdOutlineCreate,MdUpdate} from 'react-icons/md'
-import { Link } from "react-router-dom";
+import {MdOutlineCreate,MdUpdate,MdDelete} from 'react-icons/md'
 import {BiUpvote,BiDownvote} from 'react-icons/bi'
-export default function Commentbox ({comments}){
+import { Button } from "react-bootstrap";
+import {deleteComment,selectComments} from '../api'
+import { useState } from "react";
+export default function Commentbox ({comments,setComments,ArticleId}){
 
-    
+const [deleted,setDeleted]= useState(null)
 
 return comments.map((comment)=>{
+
+const handleClick = (id)=>{
+
+deleteComment(id)
+.then(()=>{
+  setDeleted(true)
+  return selectComments(ArticleId)
+})
+.then((comments)=>{
+  setDeleted(null)
+ setComments(()=>{return comments})
+})
+
+ }
 
     return(
     
@@ -20,7 +36,7 @@ return comments.map((comment)=>{
       >
         
         <Card.Title ><p>{comment.author}</p>
-          <p className="date-main"><MdUpdate/>{comment.created_at.slice(0,-14)}</p>
+          <p className="date-main"><MdUpdate/>{comment.created_at.slice(0,-14)} <Button disabled={deleted}className="delete-button" variant="dark" onClick={()=>handleClick(comment.comment_id)}>{<MdDelete/>}</Button></p>
        </Card.Title>
       <Card.Body>{comment.body}</Card.Body>
         <Card.Footer>  

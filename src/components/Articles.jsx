@@ -10,7 +10,6 @@ export default function ArticlesList() {
   useEffect(() => {
     setIsLoading(true);
     selectArticles(topic).then((articles) => {
-      console.log(articles)
         setArticles(articles);
       setIsLoading(false);
     });

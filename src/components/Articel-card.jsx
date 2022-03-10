@@ -10,7 +10,7 @@ export const ArticelCard =({article})=>{
   const [upvote,setUpvote]=useState(null)
   const [downvote,setDownvote]=useState(null)
   const [err, setErr] = useState(null);
-
+console.log(article.comment_count)
   const handleUpVote = (id) => {
 if(downvote)  {
   setVote((currVote)=>currVote+2)
@@ -74,7 +74,18 @@ return(
     <Card.Footer
     >
      
-       <p className="author-comments"><MdOutlineCreate/>{article.author} <FaRegCommentDots className="comment-icon"/>  {vote} <Button disabled={upvote} onClick={()=>handleUpVote(article.article_id)}variant="dark"> <BiUpvote className="upvote"/></Button> <Button disabled={downvote} onClick={()=>handleDownVote(article.article_id)} variant="dark"><BiDownvote className="downvote"/></Button></p>  
+     <Card.Text className="author-comments">
+        
+     <MdOutlineCreate/>{article.author} 
+       <Button disabled={upvote} onClick={()=>handleUpVote(article.article_id)}variant="dark"> <BiUpvote className="upvote"/></Button> 
+       <Button disabled={downvote} onClick={()=>handleDownVote(article.article_id)} variant="dark"><BiDownvote className="downvote"/></Button> 
+       {vote}
+       <Link style={{ textDecoration: 'none' }} to={{
+
+pathname: `${article.article_id}`
+}}><FaRegCommentDots className="comment-icon"/>{article.comment_count}</Link>
+       
+       </Card.Text>
 
     </Card.Footer>
   </Card>

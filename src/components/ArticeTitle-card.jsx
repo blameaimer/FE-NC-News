@@ -25,7 +25,7 @@ return(
       <p className="date-main"><MdUpdate/>{article.created_at.slice(0,-14)}</p>
     <Card.Footer
     >  
-       <p className="author-comments"><MdOutlineCreate/>{article.author} <FaRegCommentDots/> {article.comment_count} </p> {article.votes === 0 ? "" : article.votes } 
+       <p className="author-comments"><MdOutlineCreate/>{article.author} <FaRegCommentDots/> {article.comment_count} </p>
     </Card.Footer>
   </Card>
 )

@@ -10,8 +10,11 @@ body {
 .input-comment{
   background-color: rgba(0, 0, 0, 0);
   color:cornflowerblue;
-  width:80%;
-  margin-right: 15px;
+  width:90%;
+  border-color: rgb(31, 30, 30);
+  border-radius: 1em;
+  margin-right: 3.5em;
+  margin-left: 1em;
 }
  
 
@@ -43,6 +46,8 @@ body {
   margin-bottom: 0;
   margin-left: 1.2em;
 }
+
+
 .date{
   color: rgb(0, 153, 255);
   font-size: 13px;
@@ -54,17 +59,15 @@ body {
 
 .author-comments{
   color: rgb(255, 0, 106);
-  font-size: 1em;
   text-align: left;
-  font-weight: bold;
-  padding-left: 1em;
+  
   margin-bottom: 2px;
 }
 
 .comment-icon{
-margin-left: 0.5em;
-margin-right: 0.5em;
-width:25%;
+margin-left: 20%;
+margin-right:0.5em;
+
 }
 .user{ 
   margin-bottom: 0px;
