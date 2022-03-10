@@ -22,8 +22,8 @@ export const selectArticles = (topic) => {
             vote: vote
         
     }).then(({data})=>{
-        console.log(data)
-        return data
+        
+        return data.comment
     })
  }
 
@@ -38,5 +38,11 @@ export const selectComments = (id)=>{
   return newsApi.get(`articles/${id}/comments`).then(({data})=>{
     return data.comments
   })
+}
+export const insertComment = (id,newComment) =>{
+return newsApi.post(`articles/${id}/comments`,newComment).then(({data})=>{
+    console.log(data)
+    return data
+})
 }
 
