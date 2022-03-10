@@ -6,13 +6,13 @@ import NavBar from "./NavBar";
 import Commentbox from './comment-box'
 export default function Articel() {
   let {id,topic} = useParams();
-  const [articels, setArticel] = useState([]);
+  const [articel, setArticel] = useState([]);
   const [comments,setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     setIsLoading(true);
     selectArticel(id).then((article) => { 
-      
+      console.log(article)
         setArticel(article);
       
       return selectComments(id)
@@ -31,7 +31,7 @@ export default function Articel() {
   
       </nav>
     <section> 
-        <ArticelCard articles={articels} />
+        <ArticelCard article={articel} />
         <Commentbox comments ={comments} />
     </section>
     </>
