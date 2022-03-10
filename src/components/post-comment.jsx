@@ -16,10 +16,11 @@ export const PostComment = ({id,setComments}) => {
             body: Comment
         }
         setPosted(true)
-        insertComment(id,commentForApi).then(()=>{
+        insertComment(id,commentForApi).then(({comment})=>{
+          
+          setComments((currComments)=> {return [comment,...currComments]})
             setPosted(null)
             setNewComment("")
-            window.location.reload()
         }).catch((err)=>{
             setPosted(null)
             setErr(true)

@@ -22,8 +22,8 @@ export const selectArticles = (topic) => {
             vote: vote
         
     }).then(({data})=>{
-        console.log(data)
-        return data
+        
+        return data.comment
     })
  }
 
