@@ -39,4 +39,10 @@ export const selectComments = (id)=>{
     return data.comments
   })
 }
+export const insertComment = (id,newComment) =>{
+return newsApi.post(`articles/${id}/comments`,newComment).then(({data})=>{
+    console.log(data)
+    return data
+})
+}
 

@@ -4,6 +4,7 @@ import {ArticelCard} from './Articel-card'
 import { useParams } from "react-router-dom";
 import NavBar from "./NavBar";
 import Commentbox from './comment-box'
+import { PostComment } from "./post-comment";
 export default function Articel() {
   let {id,topic} = useParams();
   const [articel, setArticel] = useState([]);
@@ -12,7 +13,7 @@ export default function Articel() {
   useEffect(() => {
     setIsLoading(true);
     selectArticel(id).then((article) => { 
-      console.log(article)
+     
         setArticel(article);
       
       return selectComments(id)
@@ -32,6 +33,7 @@ export default function Articel() {
       </nav>
     <section> 
         <ArticelCard article={articel} />
+        <PostComment id={articel.article_id}setComments={setComments}/>
         <Commentbox comments ={comments} />
     </section>
     </>

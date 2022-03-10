@@ -7,6 +7,14 @@ body {
   padding-bottom: 55px;
   
 }
+.input-comment{
+  background-color: rgba(0, 0, 0, 0);
+  color:cornflowerblue;
+  width:80%;
+  margin-right: 15px;
+}
+ 
+
 .ncicon{
   font-size:1.1em;
   color: rgb(255, 0, 76);
