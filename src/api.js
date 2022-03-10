@@ -5,11 +5,12 @@ const newsApi = axios.create({
     baseURL: "https://nc-news-blame.herokuapp.com/api",
 })
 
-export const selectArticles = (topic) => {
+export const selectArticles = (topic,sortby) => {
   return  newsApi.get("/articles", {
  
       params: {
         topic: topic,
+        sort_by: sortby
       },
       
     }).then(({ data}) => {

@@ -7,6 +7,9 @@ body {
   padding-bottom: 55px;
   
 }
+.form-select{
+  color: rgb(255, 0, 76);
+}
 .ncicon{
   font-size:1.1em;
   color: rgb(255, 0, 76);
