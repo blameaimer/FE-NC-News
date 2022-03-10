@@ -27,9 +27,16 @@ export const selectArticles = (topic) => {
     })
  }
 
-// axios.get("/myPetServer/dogs", {
-//     params: {
-//       breed: "poodle",
-//       sort_by: "age",
-//     },
-//   });
+export const selectArticel = (id)=>{
+  
+  return newsApi.get(`articles/${id}`).then(({data})=>{
+    return data.article
+  })
+}
+
+export const selectComments = (id)=>{
+  return newsApi.get(`articles/${id}/comments`).then(({data})=>{
+    return data.comments
+  })
+}
+

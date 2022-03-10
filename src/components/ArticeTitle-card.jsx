@@ -16,8 +16,10 @@ return(
     <Card.Header><h1 className="Welcome">Welcome to NC News</h1></Card.Header>
     <Card.Title >
     <Link style={{ textDecoration: 'none' }} to={{
+    
     pathname: `${article.article_id}`
   }}> <p className="title-main">{article.title}</p>
+
   </Link></Card.Title>
   
       <p className="date-main"><MdUpdate/>{article.created_at.slice(0,-14)}</p>

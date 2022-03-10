@@ -61,9 +61,11 @@ return(
     className={`${article.article_id}`}
   >
     <Card.Header ><Link style={{ textDecoration: 'none' }} to={{
+
     pathname: `${article.article_id}`
   }}><p className="title">{article.title} </p></Link>
     <p className="date"><MdUpdate/>{article.created_at.slice(0,-14)}</p></Card.Header>
+
     <Card.Body>
       <Card.Text>
         {article.body}
