@@ -3,25 +3,53 @@
   import {MdOutlineCreate,MdUpdate} from 'react-icons/md'
   import {BiUpvote,BiDownvote} from 'react-icons/bi'
   import { Link } from "react-router-dom";
-  import { useState,useEffect } from "react";
+  import { useState } from "react";
+  import {updateVote} from '../api'
 export const ArticelCard =({article})=>{
-  const [votes,setVotes]=useState(0)
-  // useEffect(() => {
-  //   setIsLoading(true);
-     
-  //     setVotes(article.votes);
-  //     setIsLoading(false);
-    
-  // }, [article.votes]);
+  const [vote,setVote]=useState(article.votes)
+  const [upvote,setUpvote]=useState(null)
+  const [downvote,setDownvote]=useState(null)
+  const [err, setErr] = useState(null);
+
   const handleUpVote = (id) => {
+if(downvote)  {
+  setVote((currVote)=>currVote+2)
+  updateVote(id,2).catch((err) => {
+    // setVote((currVote) => currVote -= 1);
+    setErr('Something went wrong, please try again.');
+  });
+} 
+  else{ 
+    setVote((currVote)=>currVote+1)
+    updateVote(id,1).catch((err) => {
+      // setVote((currVote) => currVote -= 1);
+      setErr('Something went wrong, please try again.');
+    });
+  }
+setUpvote(true);
+setDownvote(null)
 
-setVotes((currVote)=>currVote+1)
-console.log(votes)
-console.log(article.votes,id)
+
  };
-  const handleDownVote = () => {
-    setVotes((currVote)=>currVote-1)
+  const handleDownVote = (id) => {
+ if(upvote){
+   setVote((currVote)=>currVote-2)
+   updateVote(id,-2).catch((err) => {
+    // setVote((currVote) => currVote -= 1);
+    setErr('Something went wrong, please try again.');
+  });
 
+
+} else {
+  setVote((currVote)=>currVote-1)
+  updateVote(id,-1).catch((err) => {
+    // setVote((currVote) => currVote -= 1);
+    setErr('Something went wrong, please try again.');
+  });
+}
+setDownvote(true)
+setUpvote(null)
+    
   };
 
 return(
@@ -44,7 +72,7 @@ return(
     <Card.Footer
     >
      
-       <p className="author-comments"><MdOutlineCreate/>{article.author} <FaRegCommentDots className="comment-icon"/>  {article.votes+votes} <Button onClick={()=>handleUpVote(article.article_id)}variant="dark"> <BiUpvote className="upvote"/></Button> <Button onClick={()=>handleDownVote(article.article_id)} variant="dark"><BiDownvote className="downvote"/></Button></p>  
+       <p className="author-comments"><MdOutlineCreate/>{article.author} <FaRegCommentDots className="comment-icon"/>  {vote} <Button disabled={upvote} onClick={()=>handleUpVote(article.article_id)}variant="dark"> <BiUpvote className="upvote"/></Button> <Button disabled={downvote} onClick={()=>handleDownVote(article.article_id)} variant="dark"><BiDownvote className="downvote"/></Button></p>  
 
     </Card.Footer>
   </Card>
