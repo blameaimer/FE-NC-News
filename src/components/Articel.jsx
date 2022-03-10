@@ -33,7 +33,7 @@ export default function Articel() {
       </nav>
     <section> 
         <ArticelCard article={articel} />
-        <PostComment id={articel.article_id}setComments={setComments}/>
+        <PostComment id={articel.article_id}/>
         <Commentbox comments ={comments} />
     </section>
     </>

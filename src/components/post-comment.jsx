@@ -7,25 +7,9 @@ export const PostComment = ({id,setComments}) => {
     const [posted , setPosted] = useState(null)
   
     const handleSubmit = (event) =>{
-
-        var today = new Date().toString().slice(0,-17);
         
       event.preventDefault()
-
-      console.log(Comment)
       
-        setComments((currentComments)=>{
-            const newComment={
-                comment_id:currentComments.length+1,
-                author: 'cooljmessy',
-                body: Comment,
-                created_at: today,
-                votes: 0
-
-            }
-            return [newComment,...currentComments]
-            
-        })
 
         const commentForApi={
             username: 'cooljmessy',
@@ -34,9 +18,13 @@ export const PostComment = ({id,setComments}) => {
         setPosted(true)
         insertComment(id,commentForApi).then(()=>{
             setPosted(null)
+            setNewComment("")
+            window.location.reload()
         }).catch((err)=>{
             setPosted(null)
             setErr(true)
+            setNewComment("")
+            
         })
     }
     return (
@@ -44,15 +32,16 @@ export const PostComment = ({id,setComments}) => {
         text='light'
         style={{ width: '100%'}}>
       <Form className="form-comment" onSubmit={handleSubmit}>
-    
+      
       <Card.Body>
       <Card.Text>
         Write a comment
       </Card.Text>
             {err ? <Card.Text>Sorry something happened!</Card.Text>  : null}
+            <Form.Label>
           <input className="input-comment"value={Comment} 
           onChange={(e)=>setNewComment(e.target.value)} required/>
-          
+          </Form.Label>
    
         <Button disabled={posted}variant="dark"type="submit">Post</Button>
     </Card.Body>
