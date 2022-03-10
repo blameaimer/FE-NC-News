@@ -1,15 +1,13 @@
 .App {
   text-align: center;
-  background-color: rgb(41, 41, 41);
+  background-color:#212529;
 }
 body {
   padding-top: 60px;
   padding-bottom: 55px;
   
 }
-.form-select{
-  color: rgb(255, 0, 76);
-}
+
 .ncicon{
   font-size:1.1em;
   color: rgb(255, 0, 76);
@@ -30,6 +28,8 @@ body {
   margin-bottom: 0;
 
 }
+
+
 .date-main{
   color: rgb(0, 153, 255);
   font-size: 13px;
@@ -38,6 +38,18 @@ body {
   margin-bottom: 0;
   margin-left: 1.2em;
 }
+
+
+select{
+  font-weight: bold;
+  display:inline-flex;
+  color: rgb(18, 93, 253);
+  background-color:#212529;
+  width:50%;
+  border:10px;
+  border-color:#212529 ;
+}
+
 .date{
   color: rgb(0, 153, 255);
   font-size: 13px;

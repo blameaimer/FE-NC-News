@@ -1,11 +1,11 @@
 import './App.css';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import HomeArticle from './components/Home';
 import ArticlesList from './components/Articles'
 import Articel from './components/Articel'
 function App() {
   return (
-    <BrowserRouter>
+    
  
     <div className="App">
       <Routes>
@@ -18,7 +18,7 @@ function App() {
     </div>
       
    
-    </BrowserRouter>
+    
   );
 }
 

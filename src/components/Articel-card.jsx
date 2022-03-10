@@ -74,7 +74,7 @@ return(
     <Card.Footer
     >
      
-       <p className="author-comments"><MdOutlineCreate/>{article.author} <FaRegCommentDots className="comment-icon"/>  {vote} <Button disabled={upvote} onClick={()=>handleUpVote(article.article_id)}variant="dark"> <BiUpvote className="upvote"/></Button> <Button disabled={downvote} onClick={()=>handleDownVote(article.article_id)} variant="dark"><BiDownvote className="downvote"/></Button></p>  
+       <p className="author-comments"><MdOutlineCreate/>{article.author} <FaRegCommentDots className="comment-icon" />  {vote} <Button disabled={upvote} onClick={()=>handleUpVote(article.article_id)}variant="dark"> <BiUpvote className="upvote"/></Button> <Button disabled={downvote} onClick={()=>handleDownVote(article.article_id)} variant="dark"><BiDownvote className="downvote"/></Button></p>  
 
     </Card.Footer>
   </Card>
