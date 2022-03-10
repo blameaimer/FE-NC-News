@@ -1,9 +1,56 @@
-  import {Card} from "react-bootstrap";
+  import {Card,Button} from "react-bootstrap";
   import {FaRegCommentDots} from 'react-icons/fa'
   import {MdOutlineCreate,MdUpdate} from 'react-icons/md'
   import {BiUpvote,BiDownvote} from 'react-icons/bi'
   import { Link } from "react-router-dom";
-export const ArticelCard =({articles})=>{
+  import { useState } from "react";
+  import {updateVote} from '../api'
+export const ArticelCard =({article})=>{
+  const [vote,setVote]=useState(article.votes)
+  const [upvote,setUpvote]=useState(null)
+  const [downvote,setDownvote]=useState(null)
+  const [err, setErr] = useState(null);
+
+  const handleUpVote = (id) => {
+if(downvote)  {
+  setVote((currVote)=>currVote+2)
+  updateVote(id,2).catch((err) => {
+    // setVote((currVote) => currVote -= 1);
+    setErr('Something went wrong, please try again.');
+  });
+} 
+  else{ 
+    setVote((currVote)=>currVote+1)
+    updateVote(id,1).catch((err) => {
+      // setVote((currVote) => currVote -= 1);
+      setErr('Something went wrong, please try again.');
+    });
+  }
+setUpvote(true);
+setDownvote(null)
+
+
+ };
+  const handleDownVote = (id) => {
+ if(upvote){
+   setVote((currVote)=>currVote-2)
+   updateVote(id,-2).catch((err) => {
+    // setVote((currVote) => currVote -= 1);
+    setErr('Something went wrong, please try again.');
+  });
+
+
+} else {
+  setVote((currVote)=>currVote-1)
+  updateVote(id,-1).catch((err) => {
+    // setVote((currVote) => currVote -= 1);
+    setErr('Something went wrong, please try again.');
+  });
+}
+setDownvote(true)
+setUpvote(null)
+    
+  };
 
 return(
 <Card
@@ -11,21 +58,23 @@ return(
     text='light'
     style={{ width: '100%'}}
     
-    className={`${articles.article_id}`}
+    className={`${article.article_id}`}
   >
     <Card.Header ><Link style={{ textDecoration: 'none' }} to={{
-    pathname: `/articles/${articles.topic}/${articles.article_id}`
-  }}><p className="title">{articles.title} </p></Link>
-    <p className="date"><MdUpdate/>{articles.created_at.slice(0,-14)}</p></Card.Header>
+
+    pathname: `${article.article_id}`
+  }}><p className="title">{article.title} </p></Link>
+    <p className="date"><MdUpdate/>{article.created_at.slice(0,-14)}</p></Card.Header>
+
     <Card.Body>
       <Card.Text>
-        {articles.body}
+        {article.body}
       </Card.Text>
     </Card.Body>
     <Card.Footer
     >
      
-       <p className="author-comments"><MdOutlineCreate/>{articles.author} <FaRegCommentDots className="comment-icon"/>  {articles.votes === 0 ? "" : articles.votes} <BiUpvote className="upvote"/> <BiDownvote className="downvote"/></p>  
+       <p className="author-comments"><MdOutlineCreate/>{article.author} <FaRegCommentDots className="comment-icon"/>  {vote} <Button disabled={upvote} onClick={()=>handleUpVote(article.article_id)}variant="dark"> <BiUpvote className="upvote"/></Button> <Button disabled={downvote} onClick={()=>handleDownVote(article.article_id)} variant="dark"><BiDownvote className="downvote"/></Button></p>  
 
     </Card.Footer>
   </Card>

@@ -24,10 +24,10 @@ export default function HomeArticle({ topic }) {
 </nav>
     <section>
     
-      <ArticelTitleCard articles={articles[0]}/>
+      <ArticelTitleCard article={articles[0]}/>
     
-      <ArticelCard articles={articles[10]} key='mainarticel'/>
-        <ArticelCard articles={articles[21]} key='mainarticel2'/>
+      <ArticelCard article={articles[10]} key='mainarticel'/>
+        <ArticelCard article={articles[21]} key='mainarticel2'/>
         
 
 

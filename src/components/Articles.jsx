@@ -23,11 +23,11 @@ export default function ArticlesList() {
   
       </nav>
     <section>
-     {articles.map((articles,index)=>{
+     {articles.map((article,index)=>{
 
       return (
 
-        <ArticelCard articles={articles} key={index}/>
+        <ArticelCard article={article} key={index}/>
 
       )
 
