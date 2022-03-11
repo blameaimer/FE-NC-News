@@ -24,17 +24,19 @@ export default function Articel() {
       });
   }, [topic, id]);
 
-  if (isLoading) return <p>loading..</p>;
-
   return (
     <>
       <nav>
         <NavBar topic={topic} />
       </nav>
-      <section>
-        <ArticelCard article={articel} />
-        <Commentbox comments={comments} />
-      </section>
+      {isLoading ? (
+        <p>loading..</p>
+      ) : (
+        <section>
+          <ArticelCard article={articel} />
+          <Commentbox comments={comments} />
+        </section>
+      )}
     </>
   );
 }

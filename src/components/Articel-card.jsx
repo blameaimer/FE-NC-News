@@ -70,16 +70,17 @@ export const ArticelCard = ({ article }) => {
       <Card.Footer>
         <p className="author-comments">
           <MdOutlineCreate />
-          {article.author} {article.comment_count}
-          <FaRegCommentDots className="comment-icon" /> {vote}{" "}
+          {article.author}
+          <FaRegCommentDots className="comment-icon" />
+          {article.comment_count}
           <Button
             disabled={upvote}
             onClick={() => handleUpVote(article.article_id)}
             variant="dark"
           >
-            {" "}
             <BiUpvote className="upvote" />
-          </Button>{" "}
+          </Button>
+          {vote}
           <Button
             disabled={downvote}
             onClick={() => handleDownVote(article.article_id)}

@@ -5,9 +5,12 @@
 }
 body {
   padding-top: 60px;
-  padding-bottom: 55px;
+  background-color: #212529;
 }
-
+section {
+  margin-bottom: 60px;
+  background-color: #212529;
+}
 .ncicon {
   font-size: 1.1em;
   color: rgb(255, 0, 76);
@@ -34,6 +37,12 @@ p {
 .code-icon {
   margin-right: 1em;
 }
+.footy-icon {
+  margin-right: 1em;
+}
+.cooking-icon {
+  margin-right: 1em;
+}
 .date-main {
   color: rgb(0, 153, 255);
   font-size: 13px;
@@ -46,7 +55,7 @@ p {
 select {
   font-weight: bold;
   display: inline-flex;
-  color: rgb(18, 93, 253);
+  color: rgb(18, 179, 253);
   background-color: #212529;
   width: 50%;
   border: 10px;
@@ -62,27 +71,29 @@ select {
 }
 
 .author-comments {
-  color: rgb(255, 0, 106);
+  color: rgb(212, 0, 255);
   font-size: 1em;
   text-align: left;
-  font-weight: bold;
   padding-left: 1em;
   margin-bottom: 2px;
+  width: 100%;
 }
 nav.navbar.navbar-expand.navbar-dark.bg-dark.fixed-top {
   word-spacing: 0em;
 }
 .comment-icon {
   margin-left: 0.5em;
-  margin-right: 0.5em;
-  width: 25%;
+  width: 10%;
 }
 .user {
-  margin-bottom: 0px;
-  margin-left: 10em;
+  text-align: right;
 }
 .upvote {
-  margin-left: 0.5em;
+  color: rgb(212, 0, 255);
+  margin-left: 1em;
+}
+.downvote {
+  color: rgb(212, 0, 255);
 }
 
 .nav-link :hover {
