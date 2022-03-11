@@ -1,46 +1,42 @@
 import axios from "axios";
 
-
 const newsApi = axios.create({
-    baseURL: "https://nc-news-blame.herokuapp.com/api",
-})
+  baseURL: "https://nc-news-blame.herokuapp.com/api",
+});
 
-export const selectArticles = (topic,sortby,order) => {
-  console.log(sortby,order)
-  return  newsApi.get("/articles", {
- 
+export const selectArticles = (topic, sortby, order) => {
+  return newsApi
+    .get("/articles", {
       params: {
-        topic: topic==="all" ? "" : topic,
+        topic: topic === "all" ? "" : topic,
         sort_by: sortby,
-        order: order
+        order: order,
       },
-      
-    }).then(({ data}) => {
-     
-        return data.articles;
-     });;
-  };
-
- export const updateVote = (id,vote) =>{
-    return newsApi.patch(`/articles/${id}`,{
-            vote: vote
-        
-    }).then(({data})=>{
-        console.log(data)
-        return data
     })
- }
+    .then(({ data }) => {
+      return data.articles;
+    });
+};
 
-export const selectArticel = (id)=>{
-  
-  return newsApi.get(`articles/${id}`).then(({data})=>{
-    return data.article
-  })
-}
+export const updateVote = (id, vote) => {
+  return newsApi
+    .patch(`/articles/${id}`, {
+      vote: vote,
+    })
+    .then(({ data }) => {
+      console.log(data);
+      return data;
+    });
+};
 
-export const selectComments = (id)=>{
-  return newsApi.get(`articles/${id}/comments`).then(({data})=>{
-    return data.comments
-  })
-}
+export const selectArticel = (id) => {
+  return newsApi.get(`articles/${id}`).then(({ data }) => {
+    return data.article;
+  });
+};
 
+export const selectComments = (id) => {
+  return newsApi.get(`articles/${id}/comments`).then(({ data }) => {
+    return data.comments;
+  });
+};

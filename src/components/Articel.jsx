@@ -13,16 +13,14 @@ export default function Articel() {
     setIsLoading(true);
     selectArticel(id)
       .then((article) => {
-        console.log(article);
         setArticel(article);
-
         return selectComments(id);
       })
       .then((comments) => {
         setComments(comments);
         setIsLoading(false);
       });
-  }, [topic, id]);
+  }, [id]);
 
   return (
     <>
