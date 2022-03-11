@@ -30,7 +30,7 @@ deleteComment(id)
     <Card
         bg='dark'
         text='light'
-        style={{ width: '100%'}}
+        style={{ width: '100%' , height:'100%'}}
         key={comment.comment_id}
         className={`${comment.comment_id}`}
       >
