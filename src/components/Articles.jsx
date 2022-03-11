@@ -1,40 +1,40 @@
 import { useEffect, useState } from "react";
 import { selectArticles } from "../api";
-import {ArticelCard} from './Articel-card'
+import { ArticelCard } from "./Articel-card";
 import { useParams } from "react-router-dom";
 import NavBar from "./NavBar";
 export default function ArticlesList() {
-  let {topic} = useParams();
+  let { topic } = useParams();
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [err, setErr] = useState(false);
   useEffect(() => {
     setIsLoading(true);
-    selectArticles(topic).then((articles) => {
-      console.log(articles)
+    selectArticles(topic)
+      .then((articles) => {
+        console.log(articles);
         setArticles(articles);
-      setIsLoading(false);
-    });
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setErr(true);
+        setArticles([]);
+        setIsLoading(false);
+      });
   }, [topic]);
 
   if (isLoading) return <p>loading..</p>;
+  if (err) return <h1 className="error">LOOKS LIKE YOU ARE LOST CLICK HERE</h1>;
   return (
     <>
-          <nav>
-        <NavBar topic={topic}/>
-  
+      <nav>
+        <NavBar topic={topic} />
       </nav>
-    <section>
-     {articles.map((article,index)=>{
-
-      return (
-
-        <ArticelCard article={article} key={index}/>
-
-      )
-
-     })}
-      
-    </section>
+      <section>
+        {articles.map((article, index) => {
+          return <ArticelCard article={article} key={index} />;
+        })}
+      </section>
     </>
   );
 }
