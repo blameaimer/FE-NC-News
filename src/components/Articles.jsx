@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { selectArticles } from "../api";
 import { ArticelCard } from "./Articel-card";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import NavBar from "./NavBar";
 export default function ArticlesList() {
   let { topic } = useParams();
@@ -9,7 +9,6 @@ export default function ArticlesList() {
   const [isLoading, setIsLoading] = useState(true);
   const [sortBy, setNewSortBy] = useState(null);
   const [orderBy, setNewOrderBy] = useState(null);
-  const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
     setIsLoading(true);
@@ -29,11 +28,9 @@ export default function ArticlesList() {
   };
   const handleSort = (event) => {
     setNewSortBy(event.target.value);
-    setSearchParams(`sortby${event.target.value}`);
   };
   const handleOrder = (event) => {
     setNewOrderBy(event.target.value);
-    setSearchParams(`orderby${event.target.value}`);
   };
 
   return (
