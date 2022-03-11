@@ -5,24 +5,22 @@
 body {
   padding-top: 60px;
   padding-bottom: 55px;
-  
 }
-.input-comment{
+.input-comment {
   background-color: rgba(0, 0, 0, 0);
-  color:cornflowerblue;
-  width:90%;
+  color: cornflowerblue;
+  width: 90%;
   border-color: rgb(31, 30, 30);
   border-radius: 1em;
   margin-right: 3.5em;
   margin-left: 1em;
 }
- 
 
-.ncicon{
-  font-size:1.1em;
+.ncicon {
+  font-size: 1.1em;
   color: rgb(255, 0, 76);
 }
-.title-main{
+.title-main {
   color: rgb(0, 183, 255);
   font-size: 1.8em;
   text-align: left;
@@ -30,15 +28,14 @@ body {
   margin-bottom: 0;
   margin-left: 0.5em;
 }
-.title{
+.title {
   color: rgb(0, 183, 255);
   font-size: 1.8em;
   text-align: left;
   font-weight: bold;
   margin-bottom: 0;
-
 }
-.date-main{
+.date-main {
   color: rgb(0, 153, 255);
   font-size: 13px;
   text-align: left;
@@ -47,44 +44,40 @@ body {
   margin-left: 1.2em;
 }
 
-
-.date{
+.date {
   color: rgb(0, 153, 255);
   font-size: 13px;
   text-align: left;
   font-weight: bold;
   margin-bottom: 0;
-  
 }
 
-.author-comments{
+.author-comments {
   color: rgb(255, 0, 106);
   text-align: left;
-  
+
   margin-bottom: 2px;
 }
 
-.comment-icon{
-margin-left: 20%;
-margin-right:0.5em;
-
+.comment-icon {
+  margin-left: 20%;
+  margin-right: 0.5em;
 }
-.user{ 
+.user {
   margin-bottom: 0px;
-  margin-left:10em;
-  
+  margin-left: 8em;
 }
-.upvote{
-  margin-left:0.5em;
-}
-
-.nav-link :hover{
-    background-color:blue;
+.upvote {
+  margin-left: 0.5em;
 }
 
-.navbar-link> .active > a { 
-  background-color: #EAB126 ; 
+.nav-link :hover {
+  background-color: blue;
 }
-.Welcome{
+
+.navbar-link > .active > a {
+  background-color: #eab126;
+}
+.Welcome {
   color: rgb(255, 0, 76);
 }
