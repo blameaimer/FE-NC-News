@@ -13,7 +13,6 @@ function App() {
           <Route path="/" element={<HomeArticle />} />
           <Route path="/articles/:topic" element={<ArticlesList />} />
           <Route path="/articles/:topic/:id" element={<Articel />} />
-          <Route path="/:id" element={<Articel />} />
         </Routes>
       </div>
     </BrowserRouter>
