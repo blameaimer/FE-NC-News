@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { selectArticles } from "../api";
-import {ArticelCard} from './Articel-card'
+import { ArticelCard } from "./Articel-card";
 import ArticelTitleCard from "./ArticeTitle-card";
 import NavBar from "./NavBar";
 export default function HomeArticle({ topic }) {
@@ -9,30 +9,26 @@ export default function HomeArticle({ topic }) {
   useEffect(() => {
     setIsLoading(true);
     selectArticles().then((articles) => {
-        setArticles(articles);
+      setArticles(articles);
       setIsLoading(false);
     });
   }, [topic]);
 
-  if (isLoading) return <p>loading..</p>;
   return (
     <>
-    <nav>
-  <NavBar topic={"/"}/>
+      <nav>
+        <NavBar topic={"/"} />
+      </nav>
+      {isLoading ? (
+        <p>loading..</p>
+      ) : (
+        <section>
+          <ArticelTitleCard article={articles[0]} />
 
-
-</nav>
-    <section>
-    
-      <ArticelTitleCard article={articles[0]}/>
-    
-      <ArticelCard article={articles[10]} key='mainarticel'/>
-        <ArticelCard article={articles[21]} key='mainarticel2'/>
-        
-
-
-      
-    </section>
+          <ArticelCard article={articles[10]} key="mainarticel" />
+          <ArticelCard article={articles[21]} key="mainarticel2" />
+        </section>
+      )}
     </>
   );
 }
