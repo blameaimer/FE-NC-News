@@ -1,18 +1,19 @@
 .App {
   text-align: center;
-  background-color:#212529;
+  background-color: #212529;
+  height: 100vh;
 }
 body {
   padding-top: 60px;
   padding-bottom: 55px;
-  
 }
 
-.ncicon{
-  font-size:1.1em;
+.ncicon {
+  font-size: 1.1em;
   color: rgb(255, 0, 76);
+  margin-right: 2em;
 }
-.title-main{
+.title-main {
   color: rgb(0, 183, 255);
   font-size: 1.8em;
   text-align: left;
@@ -20,17 +21,20 @@ body {
   margin-bottom: 0;
   margin-left: 0.5em;
 }
-.title{
+.title {
   color: rgb(0, 183, 255);
   font-size: 1.8em;
   text-align: left;
   font-weight: bold;
   margin-bottom: 0;
-
 }
-
-
-.date-main{
+p {
+  color: rgb(255, 255, 255);
+}
+.code-icon {
+  margin-right: 1em;
+}
+.date-main {
   color: rgb(0, 153, 255);
   font-size: 13px;
   text-align: left;
@@ -39,27 +43,25 @@ body {
   margin-left: 1.2em;
 }
 
-
-select{
+select {
   font-weight: bold;
-  display:inline-flex;
+  display: inline-flex;
   color: rgb(18, 93, 253);
-  background-color:#212529;
-  width:50%;
-  border:10px;
-  border-color:#212529 ;
+  background-color: #212529;
+  width: 50%;
+  border: 10px;
+  border-color: #212529;
 }
 
-.date{
+.date {
   color: rgb(0, 153, 255);
   font-size: 13px;
   text-align: left;
   font-weight: bold;
   margin-bottom: 0;
-  
 }
 
-.author-comments{
+.author-comments {
   color: rgb(255, 0, 106);
   font-size: 1em;
   text-align: left;
@@ -67,28 +69,29 @@ select{
   padding-left: 1em;
   margin-bottom: 2px;
 }
-
-.comment-icon{
-margin-left: 0.5em;
-margin-right: 0.5em;
-width:25%;
+nav.navbar.navbar-expand.navbar-dark.bg-dark.fixed-top {
+  word-spacing: 0em;
 }
-.user{ 
+.comment-icon {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  width: 25%;
+}
+.user {
   margin-bottom: 0px;
-  margin-left:10em;
-  
+  margin-left: 10em;
 }
-.upvote{
-  margin-left:0.5em;
-}
-
-.nav-link :hover{
-    background-color:blue;
+.upvote {
+  margin-left: 0.5em;
 }
 
-.navbar-link> .active > a { 
-  background-color: #EAB126 ; 
+.nav-link :hover {
+  background-color: blue;
 }
-.Welcome{
+
+.navbar-link > .active > a {
+  background-color: #eab126;
+}
+.Welcome {
   color: rgb(255, 0, 76);
 }
