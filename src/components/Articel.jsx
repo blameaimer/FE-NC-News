@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import NavBar from "./NavBar";
 import Commentbox from "./comment-box";
 import { PostComment } from "./post-comment";
+import ErrorPage from "./ErrorPage";
 export default function Articel() {
   let { id, topic } = useParams();
   const [articel, setArticel] = useState([]);
@@ -16,14 +17,15 @@ export default function Articel() {
     selectArticel(id)
       .then((article) => {
         setArticel(article);
+        setIsLoading(false);
       })
       .catch((err) => {
         setIsLoading(false);
-        setErr(true);
+        setErr({ err });
         setArticel([]);
         setComments([]);
       });
-  }, [topic, id]);
+  }, [id]);
   useEffect(() => {
     setIsLoading(true);
     selectComments(id)
@@ -32,7 +34,7 @@ export default function Articel() {
         setIsLoading(false);
       })
       .catch((err) => {
-        setIsLoading(false);
+        setIsLoading({ err });
         setErr(true);
         setArticel([]);
         setComments([]);
@@ -40,7 +42,7 @@ export default function Articel() {
   }, [id]);
   console.log(err);
   if (isLoading) return <p>loading..</p>;
-  if (err) return <h1>LOOKS LIKE YOU ARE LOST CLICK HERE</h1>;
+  if (err) return <ErrorPage />;
   return (
     <>
       <nav>

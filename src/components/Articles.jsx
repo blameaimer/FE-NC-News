@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { selectArticles } from "../api";
 import { ArticelCard } from "./Articel-card";
 import { useParams } from "react-router-dom";
+import ErrorPage from "./ErrorPage";
 import NavBar from "./NavBar";
 export default function ArticlesList() {
   let { topic } = useParams();
@@ -16,7 +17,7 @@ export default function ArticlesList() {
         setArticles(articles);
         setIsLoading(false);
       })
-      .catch((err) => {
+      .catch(() => {
         setErr(true);
         setArticles([]);
         setIsLoading(false);
@@ -24,7 +25,7 @@ export default function ArticlesList() {
   }, [topic]);
 
   if (isLoading) return <p>loading..</p>;
-  if (err) return <h1 className="error">LOOKS LIKE YOU ARE LOST CLICK HERE</h1>;
+  if (err) return <ErrorPage />;
   return (
     <>
       <nav>
