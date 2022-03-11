@@ -81,3 +81,9 @@ body {
 .Welcome {
   color: rgb(255, 0, 76);
 }
+
+button.delete-button.btn.btn-dark {
+  font-size: 15px;
+  margin-bottom: 0.3em;
+  color: rgb(255, 0, 76);
+}

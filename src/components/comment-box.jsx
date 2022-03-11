@@ -44,7 +44,8 @@ export default function Commentbox({ comments, setComments, ArticleId }) {
                 variant="dark"
                 onClick={() => handleClick(comment.comment_id)}
               >
-                {<MdDelete />}
+                {<MdDelete className="delete-icon" />}
+                <span>Delete</span>
               </Button>
             ) : (
               ""
