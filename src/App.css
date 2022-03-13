@@ -5,12 +5,27 @@
 }
 body {
   padding-top: 60px;
+  padding-bottom: 55px;
+}
+
+.input-comment {
+  background-color: rgba(0, 0, 0, 0);
+  color: cornflowerblue;
+  width: 90%;
+  border-color: rgb(31, 30, 30);
+  border-radius: 1em;
+  margin-right: 3.5em;
+  margin-left: 1em;
+}
+
+
   background-color: #212529;
 }
 section {
   margin-bottom: 60px;
   background-color: #212529;
 }
+
 .ncicon {
   font-size: 1.1em;
   color: rgb(255, 0, 76);
@@ -31,6 +46,7 @@ section {
   font-weight: bold;
   margin-bottom: 0;
 }
+
 p {
   color: rgb(255, 255, 255);
 }
@@ -43,6 +59,7 @@ p {
 .cooking-icon {
   margin-right: 1em;
 }
+
 .date-main {
   color: rgb(0, 153, 255);
   font-size: 13px;
@@ -51,6 +68,7 @@ p {
   margin-bottom: 0;
   margin-left: 1.2em;
 }
+
 
 select {
   font-weight: bold;
@@ -62,6 +80,7 @@ select {
   border-color: #212529;
 }
 
+
 .date {
   color: rgb(0, 153, 255);
   font-size: 13px;
@@ -71,13 +90,18 @@ select {
 }
 
 .author-comments {
+  color: rgb(255, 0, 106);
+  text-align: left;
+
+
   color: rgb(212, 0, 255);
   font-size: 1em;
   text-align: left;
   padding-left: 1em;
-  margin-bottom: 2px;
-  width: 100%;
+
 }
+
+
 nav.navbar.navbar-expand.navbar-dark.bg-dark.fixed-top {
   word-spacing: 0em;
 }
@@ -94,6 +118,7 @@ nav.navbar.navbar-expand.navbar-dark.bg-dark.fixed-top {
 }
 .downvote {
   color: rgb(212, 0, 255);
+
 }
 
 .nav-link :hover {
@@ -102,7 +127,13 @@ nav.navbar.navbar-expand.navbar-dark.bg-dark.fixed-top {
 
 .navbar-link > .active > a {
   background-color: #eab126;
+
 }
 .Welcome {
   color: rgb(255, 0, 76);
 }
+
+button.delete-button.btn.btn-dark {
+  font-size: 15px;
+  margin-bottom: 0.3em;
+

@@ -10,7 +10,6 @@ export const ArticelCard = ({ article }) => {
   const [upvote, setUpvote] = useState(null);
   const [downvote, setDownvote] = useState(null);
   const [err, setErr] = useState(null);
-
   const handleUpVote = (id) => {
     if (downvote) {
       setVote((currVote) => currVote + 2);
@@ -64,23 +63,22 @@ export const ArticelCard = ({ article }) => {
         </p>
       </Card.Header>
 
+
       <Card.Body>
         <Card.Text>{article.body}</Card.Text>
       </Card.Body>
       <Card.Footer>
-        <p className="author-comments">
+        <Card.Text className="author-comments">
           <MdOutlineCreate />
           {article.author}
-          <FaRegCommentDots className="comment-icon" />
-          {article.comment_count}
           <Button
             disabled={upvote}
             onClick={() => handleUpVote(article.article_id)}
             variant="dark"
           >
+            {" "}
             <BiUpvote className="upvote" />
           </Button>
-          {vote}
           <Button
             disabled={downvote}
             onClick={() => handleDownVote(article.article_id)}
@@ -88,9 +86,21 @@ export const ArticelCard = ({ article }) => {
           >
             <BiDownvote className="downvote" />
           </Button>
-        </p>
+          {vote}
+          <Link
+            style={{ textDecoration: "none" }}
+            to={{
+              pathname: `${article.article_id}`,
+            }}
+          >
+            <FaRegCommentDots className="comment-icon" />
+            {article.comment_count}
+          </Link>
+        </Card.Text>
       </Card.Footer>
     </Card>
   );
 };
+
+
 export default ArticelCard;

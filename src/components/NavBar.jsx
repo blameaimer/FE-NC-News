@@ -1,15 +1,20 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../pics/React-icon.svg";
-import { React } from "react";
+import { React, useContext } from "react";
+import { CgProfile } from "react-icons/cg";
+import { UserContext } from "./User";
 import { FaNewspaper, FaUsers } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { BiCodeAlt } from "react-icons/bi";
 import { IoMdFootball } from "react-icons/io";
 import { GiCookingPot, GiWorld } from "react-icons/gi";
 import { AiOutlineHome } from "react-icons/ai";
+
+
 export default function NavBarTop({ topic = "" }) {
-  let username = "Guest";
+  let { user } = useContext(UserContext);
+
   return (
     <>
       <Container>
@@ -30,6 +35,8 @@ export default function NavBarTop({ topic = "" }) {
                 NC News
               </b>
             </Nav.Link>
+
+
             <Nav.Link href="/articles/coding">
               <BiCodeAlt className="code-icon" size={28} />
             </Nav.Link>
@@ -42,6 +49,7 @@ export default function NavBarTop({ topic = "" }) {
             <Nav.Link href="/articles/all">
               <GiWorld className="all-icon" size={28} />
             </Nav.Link>
+
           </Nav>
         </Navbar>
       </Container>
@@ -52,15 +60,14 @@ export default function NavBarTop({ topic = "" }) {
             <Nav.Link href="/">
               <img src={logo} alt="react-logo" width="30" height="30" />
             </Nav.Link>
-            <Nav.Link href="/">
-              <AiOutlineHome size={28} />
-            </Nav.Link>
-            <Nav.Link href="/users">
-              <FaUsers size={28} />
-            </Nav.Link>
-            <Nav.Link href={`/users/${username}`}>
+
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/users">Users</Nav.Link>
+            <Nav.Link href={`/users/${user}`}>
               <p className="user">
-                {username} <CgProfile />
+                {user} <CgProfile />
+
+
               </p>
             </Nav.Link>
           </Nav>

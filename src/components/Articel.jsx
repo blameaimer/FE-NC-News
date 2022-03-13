@@ -4,13 +4,16 @@ import { ArticelCard } from "./Articel-card";
 import { useParams } from "react-router-dom";
 import NavBar from "./NavBar";
 
-import Commentbox from './comment-box'
+import Commentbox from "./comment-box";
+
 import { PostComment } from "./post-comment";
+
 export default function Articel() {
   let { id, topic } = useParams();
   const [articel, setArticel] = useState([]);
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
 
     selectArticel(id)
@@ -31,14 +34,21 @@ export default function Articel() {
         <NavBar topic={topic} />
       </nav>
 
+
       {isLoading ? (
         <p>loading..</p>
       ) : (
         <section>
           <ArticelCard article={articel} />
-          <Commentbox comments={comments} />
+         <PostComment id={articel.article_id} setComments={setComments} />
+        <Commentbox
+          comments={comments}
+          setComments={setComments}
+          ArticleId={id}
+        />
         </section>
       )}
+
 
     </>
   );

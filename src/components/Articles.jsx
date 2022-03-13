@@ -12,8 +12,10 @@ export default function ArticlesList() {
 
   useEffect(() => {
     setIsLoading(true);
+
     selectArticles(topic, sortBy, orderBy).then((articles) => {
       setArticles(articles);
+
       setIsLoading(false);
     });
   }, [topic, sortBy, orderBy]);
