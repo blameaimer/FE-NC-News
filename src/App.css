@@ -4,25 +4,13 @@
   height: 100vh;
 }
 body {
-  padding-top: 60px;
-  padding-bottom: 55px;
-}
-
-
-.input-comment {
-  background-color: rgba(0, 0, 0, 0);
-  color: cornflowerblue;
-  width: 90%;
-  border-color: rgb(31, 30, 30);
-  border-radius: 1em;
-  margin-right: 3.5em;
-  margin-left: 1em;
+  background-color: #212529;
 }
 
 section {
+  padding-top: 65px;
   margin-bottom: 60px;
   background-color: #212529;
-
 }
 
 .ncicon {
@@ -44,8 +32,6 @@ section {
   text-align: left;
   font-weight: bold;
   margin-bottom: 0;
-
-
 }
 
 p {
@@ -60,8 +46,9 @@ p {
 .cooking-icon {
   margin-right: 1em;
 }
-
-
+div.card-footer {
+  padding-bottom: 15px;
+}
 .date-main {
   color: rgb(0, 153, 255);
   font-size: 13px;
@@ -71,8 +58,8 @@ p {
   margin-left: 1.2em;
 }
 
-
 select {
+  height: 6vh;
   font-weight: bold;
   display: inline-flex;
   color: rgb(18, 179, 253);
@@ -89,54 +76,65 @@ select {
   font-weight: bold;
   margin-bottom: 0;
 }
-
+.input-comment {
+  background-color: rgba(0, 0, 0, 0);
+  color: cornflowerblue;
+  width: 90%;
+  border-color: rgb(31, 30, 30);
+  border-radius: 1em;
+  margin-right: 3.5em;
+  margin-left: 1em;
+}
 .author-comments {
-  color: rgb(255, 0, 106);
   text-align: left;
-
   color: rgb(212, 0, 255);
   font-size: 1em;
-  text-align: left;
   padding-left: 1em;
 }
-
-
-
-nav.navbar.navbar-expand.navbar-dark.bg-dark.fixed-top {
-  word-spacing: 0em;
+.comment-footer {
+  text-align: right;
+  color: rgb(212, 0, 255);
+  font-size: 1em;
 }
+
 .comment-icon {
   margin-left: 0.5em;
   width: 10%;
 }
+.comment-author {
+  color: rgb(0, 183, 255);
+  text-align: left;
+  padding-left: 0.7em;
+  font-size: 0.7em;
+}
+div.card-body {
+  padding: 0px;
+}
+div.card-footer {
+  padding-bottom: 6px;
+}
 .user {
-  text-align: right;
+  padding-top: 0.5em;
 }
 .upvote {
   color: rgb(212, 0, 255);
   margin-left: 1em;
 }
+
 .downvote {
   color: rgb(212, 0, 255);
-
 }
 
-.nav-link :hover {
-  background-color: blue;
-}
-
-.navbar-link > .active > a {
-  background-color: #eab126;
-}
 .Welcome {
+  padding-top: 1em;
   color: rgb(255, 0, 76);
 }
-
 .error {
-  padding-top: 1em;
+  padding-top: 5em;
   height: 100vh;
-
+}
 button.delete-button.btn.btn-dark {
   font-size: 15px;
   margin-bottom: 0.3em;
+  color: rgb(255, 0, 76);
 }

@@ -9,7 +9,6 @@ export default function ArticlesList() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-
   const [sortBy, setNewSortBy] = useState(null);
   const [orderBy, setNewOrderBy] = useState(null);
   const [err, setErr] = useState(false);
@@ -17,15 +16,17 @@ export default function ArticlesList() {
   useEffect(() => {
     setIsLoading(true);
 
-    selectArticles(topic, sortBy, orderBy).then((articles) => {
-      setArticles(articles);
+    selectArticles(topic, sortBy, orderBy)
+      .then((articles) => {
+        setArticles(articles);
 
-      setIsLoading(false);
-    })  .catch(() => {
+        setIsLoading(false);
+      })
+      .catch(() => {
         setErr(true);
         setArticles([]);
         setIsLoading(false);
-      });;
+      });
   }, [topic, sortBy, orderBy]);
   const sorts = {
     created_at: "Date",
@@ -38,9 +39,12 @@ export default function ArticlesList() {
   };
   const handleSort = (event) => {
     setNewSortBy(event.target.value);
+  };
+  const handleOrder = (event) => {
+    setNewOrderBy(event.target.value);
+  };
 
-
-    if (err) return <ErrorPage />;
+  if (err) return <ErrorPage />;
   return (
     <>
       <nav>
@@ -81,7 +85,6 @@ export default function ArticlesList() {
           })}
         </section>
       )}
-
     </>
   );
 }

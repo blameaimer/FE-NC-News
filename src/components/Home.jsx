@@ -3,7 +3,8 @@ import { selectArticles } from "../api";
 import { ArticelCard } from "./Articel-card";
 import ArticelTitleCard from "./ArticeTitle-card";
 import NavBar from "./NavBar";
-export default function HomeArticle({ topic }) {
+import ErrorPage from "./ErrorPage";
+export default function HomeArticle() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [err, setErr] = useState(false);
@@ -15,16 +16,14 @@ export default function HomeArticle({ topic }) {
         setArticles(articles);
         setIsLoading(false);
       })
-      .catch((err) => {
+      .catch((error) => {
         setErr(true);
         setArticles([]);
         setIsLoading(false);
       });
-  }, [topic]);
+  }, []);
 
-  if (isLoading) return <p>loading..</p>;
-  else if (err)
-    return <h1 className="error">LOOKS LIKE YOU ARE LOST CLICK HERE</h1>;
+  if (err) return <ErrorPage />;
 
   return (
     <>
@@ -36,13 +35,13 @@ export default function HomeArticle({ topic }) {
         <p>loading..</p>
       ) : (
         <section>
+          <h1 className="Welcome">Welcome to NC News</h1>
           <ArticelTitleCard article={articles[0]} />
-
+          <ArticelTitleCard article={articles[5]} />
+          <ArticelTitleCard article={articles[7]} />
           <ArticelCard article={articles[10]} key="mainarticel" />
-          <ArticelCard article={articles[21]} key="mainarticel2" />
         </section>
       )}
-
     </>
   );
 }
