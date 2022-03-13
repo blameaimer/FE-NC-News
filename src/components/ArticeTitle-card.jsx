@@ -17,7 +17,9 @@ export default function ArticelTitleCard({ article }) {
         <Link
           style={{ textDecoration: "none" }}
           to={{
-            pathname: `${article.article_id}`,
+
+            pathname: `/articles/${article.topic}/${article.article_id}`,
+
           }}
         >
           {" "}
@@ -33,7 +35,10 @@ export default function ArticelTitleCard({ article }) {
         <p className="author-comments">
           <MdOutlineCreate />
           {article.author} <FaRegCommentDots /> {article.comment_count}{" "}
-        </p>
+
+        </p>{" "}
+        {article.votes === 0 ? "" : article.votes}
+
       </Card.Footer>
     </Card>
   );

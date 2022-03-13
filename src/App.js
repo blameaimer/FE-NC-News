@@ -1,4 +1,7 @@
 import "./App.css";
+
+import ErrorPage from "./components/ErrorPage";
+
 import { Routes, Route } from "react-router-dom";
 import HomeArticle from "./components/Home";
 import ArticlesList from "./components/Articles";
@@ -11,17 +14,17 @@ function App() {
   const [user, setUser] = useState("cooljmessy");
   return (
 
-    <UserContext.Provider value={{ user, setUser }}>
+ 
+     <UserContext.Provider value={{ user, setUser }}>
       <div className="App">
         <Routes>
+          <Route path="*" element={<ErrorPage />} />
           <Route path="/" element={<HomeArticle />} />
           <Route path="/articles/:topic" element={<ArticlesList />} />
           <Route path="/articles/:topic/:id" element={<Articel />} />
-          <Route path="/:id" element={<Articel />} />
         </Routes>
       </div>
-    </UserContext.Provider>
-
+ </UserContext.Provider>
   );
 }
 

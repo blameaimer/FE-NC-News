@@ -8,6 +8,7 @@ body {
   padding-bottom: 55px;
 }
 
+
 .input-comment {
   background-color: rgba(0, 0, 0, 0);
   color: cornflowerblue;
@@ -21,6 +22,7 @@ body {
 section {
   margin-bottom: 60px;
   background-color: #212529;
+
 }
 
 .ncicon {
@@ -42,6 +44,8 @@ section {
   text-align: left;
   font-weight: bold;
   margin-bottom: 0;
+
+
 }
 
 p {
@@ -57,6 +61,7 @@ p {
   margin-right: 1em;
 }
 
+
 .date-main {
   color: rgb(0, 153, 255);
   font-size: 13px;
@@ -65,6 +70,7 @@ p {
   margin-bottom: 0;
   margin-left: 1.2em;
 }
+
 
 select {
   font-weight: bold;
@@ -94,6 +100,8 @@ select {
   padding-left: 1em;
 }
 
+
+
 nav.navbar.navbar-expand.navbar-dark.bg-dark.fixed-top {
   word-spacing: 0em;
 }
@@ -110,6 +118,7 @@ nav.navbar.navbar-expand.navbar-dark.bg-dark.fixed-top {
 }
 .downvote {
   color: rgb(212, 0, 255);
+
 }
 
 .nav-link :hover {
@@ -122,6 +131,10 @@ nav.navbar.navbar-expand.navbar-dark.bg-dark.fixed-top {
 .Welcome {
   color: rgb(255, 0, 76);
 }
+
+.error {
+  padding-top: 1em;
+  height: 100vh;
 
 button.delete-button.btn.btn-dark {
   font-size: 15px;

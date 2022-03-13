@@ -4,7 +4,9 @@ const newsApi = axios.create({
   baseURL: "https://nc-news-blame.herokuapp.com/api",
 });
 
+
 export const selectArticles = (topic, sortby, order) => {
+
   return newsApi
     .get("/articles", {
       params: {
@@ -40,13 +42,16 @@ export const selectComments = (id) => {
   });
 };
 
+
 export const insertComment = (id, newComment) => {
   return newsApi
     .post(`articles/${id}/comments`, newComment)
     .then(({ data }) => {
+
       return data;
     });
 };
 export const deleteComment = (id) => {
   return newsApi.delete(`comments/${id}`);
 };
+

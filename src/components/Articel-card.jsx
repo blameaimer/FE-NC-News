@@ -14,11 +14,13 @@ export const ArticelCard = ({ article }) => {
     if (downvote) {
       setVote((currVote) => currVote + 2);
       updateVote(id, 2).catch((err) => {
+
         setErr("Something went wrong, please try again.");
       });
     } else {
       setVote((currVote) => currVote + 1);
       updateVote(id, 1).catch((err) => {
+
         setErr("Something went wrong, please try again.");
       });
     }
@@ -29,11 +31,13 @@ export const ArticelCard = ({ article }) => {
     if (upvote) {
       setVote((currVote) => currVote - 2);
       updateVote(id, -2).catch((err) => {
+
         setErr("Something went wrong, please try again.");
       });
     } else {
       setVote((currVote) => currVote - 1);
       updateVote(id, -1).catch((err) => {
+
         setErr("Something went wrong, please try again.");
       });
     }
@@ -52,7 +56,9 @@ export const ArticelCard = ({ article }) => {
         <Link
           style={{ textDecoration: "none" }}
           to={{
-            pathname: `${article.article_id}`,
+
+            pathname: `/articles/${article.topic}/${article.article_id}`,
+
           }}
         >
           <p className="title">{article.title} </p>
@@ -62,6 +68,7 @@ export const ArticelCard = ({ article }) => {
           {article.created_at.slice(0, -14)}
         </p>
       </Card.Header>
+
 
 
       <Card.Body>
@@ -101,6 +108,7 @@ export const ArticelCard = ({ article }) => {
     </Card>
   );
 };
+
 
 
 export default ArticelCard;

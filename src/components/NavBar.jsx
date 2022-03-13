@@ -1,6 +1,7 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../pics/React-icon.svg";
+
 import { React, useContext } from "react";
 import { UserContext } from "./User";
 import { FaNewspaper } from "react-icons/fa";
@@ -31,6 +32,7 @@ export default function NavBarTop({ topic = "" }) {
                 <FaNewspaper size={28} />
                 NC News
               </b>
+
             </Nav.Link>
 
             <Nav.Link href="/articles/coding">
@@ -45,6 +47,7 @@ export default function NavBarTop({ topic = "" }) {
             <Nav.Link href="/articles/all">
               <GiWorld className="all-icon" size={28} />
             </Nav.Link>
+
           </Nav>
         </Navbar>
       </Container>
@@ -58,9 +61,11 @@ export default function NavBarTop({ topic = "" }) {
 
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/users">Users</Nav.Link>
+
             <Nav.Link href={`/users/${user}`}>
               <p className="user">
                 {user} <CgProfile />
+
               </p>
             </Nav.Link>
           </Nav>
