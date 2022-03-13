@@ -1,6 +1,4 @@
-
 import { Card, Button } from "react-bootstrap";
-import { FaRegCommentDots } from "react-icons/fa";
 import { MdUpdate, MdDelete } from "react-icons/md";
 import { BiUpvote, BiDownvote } from "react-icons/bi";
 import { deleteComment, selectComments } from "../api";
@@ -25,18 +23,11 @@ export default function Commentbox({ comments, setComments, ArticleId }) {
         });
     };
 
-
-
-
     return (
       <Card
         bg="dark"
         text="light"
-
         style={{ width: "100%", height: "100%" }}
-
-
-
         key={comment.comment_id}
         className={`${comment.comment_id}`}
       >
@@ -44,7 +35,6 @@ export default function Commentbox({ comments, setComments, ArticleId }) {
           <p>{comment.author}</p>
           <p className="date-main">
             <MdUpdate />
-
             {comment.created_at.slice(0, -14)}{" "}
             {comment.author === user ? (
               <Button
@@ -59,9 +49,6 @@ export default function Commentbox({ comments, setComments, ArticleId }) {
             ) : (
               ""
             )}
-
-            {comment.created_at.slice(0, -14)}
-
           </p>
         </Card.Title>
         <Card.Body>{comment.body}</Card.Body>

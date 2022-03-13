@@ -2,15 +2,12 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../pics/React-icon.svg";
 import { React, useContext } from "react";
-import { CgProfile } from "react-icons/cg";
 import { UserContext } from "./User";
-import { FaNewspaper, FaUsers } from "react-icons/fa";
+import { FaNewspaper } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { BiCodeAlt } from "react-icons/bi";
 import { IoMdFootball } from "react-icons/io";
 import { GiCookingPot, GiWorld } from "react-icons/gi";
-import { AiOutlineHome } from "react-icons/ai";
-
 
 export default function NavBarTop({ topic = "" }) {
   let { user } = useContext(UserContext);
@@ -36,7 +33,6 @@ export default function NavBarTop({ topic = "" }) {
               </b>
             </Nav.Link>
 
-
             <Nav.Link href="/articles/coding">
               <BiCodeAlt className="code-icon" size={28} />
             </Nav.Link>
@@ -49,7 +45,6 @@ export default function NavBarTop({ topic = "" }) {
             <Nav.Link href="/articles/all">
               <GiWorld className="all-icon" size={28} />
             </Nav.Link>
-
           </Nav>
         </Navbar>
       </Container>
@@ -66,8 +61,6 @@ export default function NavBarTop({ topic = "" }) {
             <Nav.Link href={`/users/${user}`}>
               <p className="user">
                 {user} <CgProfile />
-
-
               </p>
             </Nav.Link>
           </Nav>
