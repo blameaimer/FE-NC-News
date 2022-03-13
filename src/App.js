@@ -1,12 +1,21 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+import ErrorPage from "./components/ErrorPage";
+
+import { Routes, Route } from "react-router-dom";
 import HomeArticle from "./components/Home";
 import ArticlesList from "./components/Articles";
 import Articel from "./components/Articel";
-import ErrorPage from "./components/ErrorPage";
+import { useState } from "react";
+import { UserContext } from "./components/User";
+
+
 function App() {
+  const [user, setUser] = useState("cooljmessy");
   return (
-    <BrowserRouter>
+
+ 
+     <UserContext.Provider value={{ user, setUser }}>
       <div className="App">
         <Routes>
           <Route path="*" element={<ErrorPage />} />
@@ -15,7 +24,7 @@ function App() {
           <Route path="/articles/:topic/:id" element={<Articel />} />
         </Routes>
       </div>
-    </BrowserRouter>
+ </UserContext.Provider>
   );
 }
 
