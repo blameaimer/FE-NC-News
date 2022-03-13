@@ -63,6 +63,7 @@ export const ArticelCard = ({ article }) => {
         </p>
       </Card.Header>
 
+
       <Card.Body>
         <Card.Text>{article.body}</Card.Text>
       </Card.Body>
@@ -100,5 +101,6 @@ export const ArticelCard = ({ article }) => {
     </Card>
   );
 };
+
 
 export default ArticelCard;

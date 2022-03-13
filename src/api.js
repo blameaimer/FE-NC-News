@@ -4,27 +4,29 @@ const newsApi = axios.create({
   baseURL: "https://nc-news-blame.herokuapp.com/api",
 });
 
-export const selectArticles = (topic) => {
+
+export const selectArticles = (topic, sortby, order) => {
   return newsApi
     .get("/articles", {
       params: {
-        topic: topic,
-      },
-    })
-    .then(({ data }) => {
-      return data.articles;
-    });
-};
+        topic: topic === "all" ? "" : topic,
+        sort_by: sortby,
+        order: order,
+      },  
+    }).then(({ data}) => {
+        return data.articles;
+     });
+  };
 
-export const updateVote = (id, vote) => {
-  return newsApi
-    .patch(`/articles/${id}`, {
-      vote: vote,
+ export const updateVote = (id,vote) =>{
+    return newsApi.patch(`/articles/${id}`,{
+            vote: vote
+        
+    }).then(({data})=>{
+        
+        return data.comment
     })
-    .then(({ data }) => {
-      return data.comment;
-    });
-};
+
 
 export const selectArticel = (id) => {
   return newsApi.get(`articles/${id}`).then(({ data }) => {
@@ -37,6 +39,7 @@ export const selectComments = (id) => {
     return data.comments;
   });
 };
+
 export const insertComment = (id, newComment) => {
   return newsApi
     .post(`articles/${id}/comments`, newComment)
@@ -47,3 +50,4 @@ export const insertComment = (id, newComment) => {
 export const deleteComment = (id) => {
   return newsApi.delete(`comments/${id}`);
 };
+

@@ -5,9 +5,12 @@ import ArticlesList from "./components/Articles";
 import Articel from "./components/Articel";
 import { useState } from "react";
 import { UserContext } from "./components/User";
+
+
 function App() {
   const [user, setUser] = useState("cooljmessy");
   return (
+
     <UserContext.Provider value={{ user, setUser }}>
       <div className="App">
         <Routes>
@@ -18,6 +21,7 @@ function App() {
         </Routes>
       </div>
     </UserContext.Provider>
+
   );
 }
 
