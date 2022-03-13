@@ -27,6 +27,7 @@ export const updateVote = (id, vote) => {
 };
 
 export const selectArticel = (id) => {
+  console.log(id);
   return newsApi.get(`articles/${id}`).then(({ data }) => {
     return data.article;
   });

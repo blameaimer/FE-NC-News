@@ -18,29 +18,19 @@ export default function Articel() {
       .then((article) => {
         setArticel(article);
         setIsLoading(false);
+        return selectComments(id);
       })
-      .catch((err) => {
-        setIsLoading(false);
-        setErr({ err });
-        setArticel([]);
-        setComments([]);
-      });
-  }, [id]);
-  useEffect(() => {
-    setIsLoading(true);
-    selectComments(id)
       .then((comments) => {
         setComments(comments);
         setIsLoading(false);
       })
-      .catch((err) => {
-        setIsLoading({ err });
+      .catch((error) => {
         setErr(true);
+        setIsLoading(false);
         setArticel([]);
         setComments([]);
       });
   }, [id]);
-  console.log(err);
   if (isLoading) return <p>loading..</p>;
   if (err) return <ErrorPage />;
   return (
