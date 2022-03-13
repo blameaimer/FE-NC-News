@@ -5,8 +5,10 @@ import { deleteComment, selectComments } from "../api";
 import { useState } from "react";
 import { UserContext } from "./User";
 import { useContext } from "react";
+
 export default function Commentbox({ comments, setComments, ArticleId }) {
   const [deleted, setDeleted] = useState(null);
+
   let { user } = useContext(UserContext);
   return comments.map((comment) => {
     const handleClick = (id) => {
@@ -32,10 +34,9 @@ export default function Commentbox({ comments, setComments, ArticleId }) {
         className={`${comment.comment_id}`}
       >
         <Card.Title>
-          <p>{comment.author}</p>
-          <p className="date-main">
-            <MdUpdate />
-            {comment.created_at.slice(0, -14)}{" "}
+          <p className="comment-author">
+            {comment.author} <MdUpdate />
+            {comment.created_at.slice(0, -14)}
             {comment.author === user ? (
               <Button
                 disabled={deleted}
@@ -52,9 +53,12 @@ export default function Commentbox({ comments, setComments, ArticleId }) {
           </p>
         </Card.Title>
         <Card.Body>{comment.body}</Card.Body>
-        <Card.Footer>
-          <BiUpvote className="upvote" /> <BiDownvote className="downvote" />{" "}
-          {comment.votes === 0 ? "" : comment.votes}
+        <Card.Footer className="comment-footer">
+          <BiUpvote className="upvote" />
+
+          {comment.votes}
+
+          <BiDownvote className="downvote" />
         </Card.Footer>
       </Card>
     );

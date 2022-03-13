@@ -10,16 +10,11 @@ export default function ArticelTitleCard({ article }) {
       style={{ width: "100%" }}
       className={`${article.article_id}`}
     >
-      <Card.Header>
-        <h1 className="Welcome">Welcome to NC News</h1>
-      </Card.Header>
       <Card.Title>
         <Link
           style={{ textDecoration: "none" }}
           to={{
-
-            pathname: `/articles/${article.topic}/${article.article_id}`,
-
+            pathname: `/articles/${article.article_id}/${article.topic}`,
           }}
         >
           {" "}
@@ -34,11 +29,17 @@ export default function ArticelTitleCard({ article }) {
       <Card.Footer>
         <p className="author-comments">
           <MdOutlineCreate />
-          {article.author} <FaRegCommentDots /> {article.comment_count}{" "}
-
-        </p>{" "}
-        {article.votes === 0 ? "" : article.votes}
-
+          {article.author}
+          <Link
+            style={{ textDecoration: "none" }}
+            to={{
+              pathname: `/articles/${article.article_id}/${article.topic}`,
+            }}
+          >
+            <FaRegCommentDots className="comment-icon" />{" "}
+            {article.comment_count}
+          </Link>
+        </p>
       </Card.Footer>
     </Card>
   );

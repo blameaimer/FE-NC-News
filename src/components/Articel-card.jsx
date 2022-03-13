@@ -5,6 +5,7 @@ import { BiUpvote, BiDownvote } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { updateVote } from "../api";
+import ErrorPage from "./ErrorPage";
 export const ArticelCard = ({ article }) => {
   const [vote, setVote] = useState(article.votes);
   const [upvote, setUpvote] = useState(null);
@@ -13,14 +14,12 @@ export const ArticelCard = ({ article }) => {
   const handleUpVote = (id) => {
     if (downvote) {
       setVote((currVote) => currVote + 2);
-      updateVote(id, 2).catch((err) => {
-
+      updateVote(id, 2).catch((error) => {
         setErr("Something went wrong, please try again.");
       });
     } else {
       setVote((currVote) => currVote + 1);
-      updateVote(id, 1).catch((err) => {
-
+      updateVote(id, 1).catch((error) => {
         setErr("Something went wrong, please try again.");
       });
     }
@@ -30,21 +29,19 @@ export const ArticelCard = ({ article }) => {
   const handleDownVote = (id) => {
     if (upvote) {
       setVote((currVote) => currVote - 2);
-      updateVote(id, -2).catch((err) => {
-
+      updateVote(id, -2).catch((error) => {
         setErr("Something went wrong, please try again.");
       });
     } else {
       setVote((currVote) => currVote - 1);
-      updateVote(id, -1).catch((err) => {
-
+      updateVote(id, -1).catch((error) => {
         setErr("Something went wrong, please try again.");
       });
     }
     setDownvote(true);
     setUpvote(null);
   };
-
+  if (err) return <ErrorPage />;
   return (
     <Card
       bg="dark"
@@ -56,9 +53,7 @@ export const ArticelCard = ({ article }) => {
         <Link
           style={{ textDecoration: "none" }}
           to={{
-
-            pathname: `/articles/${article.topic}/${article.article_id}`,
-
+            pathname: `/articles/${article.article_id}/${article.topic}`,
           }}
         >
           <p className="title">{article.title} </p>
@@ -68,8 +63,6 @@ export const ArticelCard = ({ article }) => {
           {article.created_at.slice(0, -14)}
         </p>
       </Card.Header>
-
-
 
       <Card.Body>
         <Card.Text>{article.body}</Card.Text>
@@ -86,6 +79,7 @@ export const ArticelCard = ({ article }) => {
             {" "}
             <BiUpvote className="upvote" />
           </Button>
+          {vote}
           <Button
             disabled={downvote}
             onClick={() => handleDownVote(article.article_id)}
@@ -93,11 +87,11 @@ export const ArticelCard = ({ article }) => {
           >
             <BiDownvote className="downvote" />
           </Button>
-          {vote}
+
           <Link
             style={{ textDecoration: "none" }}
             to={{
-              pathname: `${article.article_id}`,
+              pathname: `/articles/${article.article_id}/${article.topic}`,
             }}
           >
             <FaRegCommentDots className="comment-icon" />
@@ -108,7 +102,5 @@ export const ArticelCard = ({ article }) => {
     </Card>
   );
 };
-
-
 
 export default ArticelCard;

@@ -9,22 +9,19 @@ import Articel from "./components/Articel";
 import { useState } from "react";
 import { UserContext } from "./components/User";
 
-
 function App() {
   const [user, setUser] = useState("cooljmessy");
   return (
-
- 
-     <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ user, setUser }}>
       <div className="App">
         <Routes>
           <Route path="*" element={<ErrorPage />} />
           <Route path="/" element={<HomeArticle />} />
           <Route path="/articles/:topic" element={<ArticlesList />} />
-          <Route path="/articles/:topic/:id" element={<Articel />} />
+          <Route path="/articles/:id/:topic" element={<Articel />} />
         </Routes>
       </div>
- </UserContext.Provider>
+    </UserContext.Provider>
   );
 }
 
