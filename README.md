@@ -5,7 +5,7 @@
   <p></p>
   <sup>
     <a href="https://app.netlify.com/sites/nc-news-blame/deploys>
-      <img src=https://api.netlify.com/api/v1/badges/66db1868-1862-420e-8c0a-a039422bbddc/deploy-status />
+      <img src="https://api.netlify.com/api/v1/badges/66db1868-1862-420e-8c0a-a039422bbddc/deploy-status" />
              </a>
   </sup>
   <br />
