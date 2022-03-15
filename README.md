@@ -44,7 +44,7 @@ Offers an interactive user interface built in <a href="https://reactjs.org/"><b>
         npm i
         npm start
 
-#### Minimum Node.js & Postgres needed to run the project
+#### Minimum Node.js 
 * Node.js >= 17.2
     
 
