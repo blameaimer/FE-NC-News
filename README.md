@@ -27,7 +27,7 @@
 
 ## 👋 Intro
 
-Offers an interactive user interface built in React. I have used component based building to manage states in order to create a relativly complex UI. 
+Offers an interactive user interface built in <a href="https://reactjs.org/"><b>React</b></a>. I have used component based building to manage states in order to create a relativly complex UI. 
 
 ---
 
@@ -44,6 +44,8 @@ Offers an interactive user interface built in React. I have used component based
         npm i
         npm start
 
+#### Minimum Node.js & Postgres needed to run the project
+* Node.js >= 17.2
     
 
 ## 👊 Further Help?
