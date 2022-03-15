@@ -1,12 +1,11 @@
 <div align="center">
-  <img src="https://www.freecodecamp.org/news/content/images/2021/06/Ekran-Resmi-2019-11-18-18.08.13.png" alt="ReactJS LOGO" width="400" />
+  <img src="https://www.freecodecamp.org/news/content/images/2021/06/Ekran-Resmi-2019-11-18-18.08.13.png" alt="ReactJS LOGO" width="800" />
   <p></p>
   <h1>NC News</h1>
   <p></p>
   <sup>
-    <a href="https://github.com/blameaimer/FE-NC-News/actions">
-      <img src="[![Netlify Status](https://api.netlify.com/api/v1/badges/66db1868-1862-420e-8c0a-a039422bbddc/deploy-status)](https://app.netlify.com/sites/nc-news-blame/deploys) />
-    </a>
+    <a href="https://nc-news-blame.netlify.app/">   <img src="https://api.netlify.com/api/v1/badges/66db1868-1862-420e-8c0a-a039422bbddc/deploy-status" alt="Netlifystatus"/></a>
+   
   </sup>
   <br />
   <p align="center">
@@ -17,6 +16,8 @@
     <a href="#-getting-started"><b>Usage</b></a>
     &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
     <a href="#-further-help"><b>Need help?</b></a>
+    &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
+    <a href="https://github.com/blameaimer/Hosting-NC-NEWS"><b>My API</b></a>
   </p>
   <br />
 </div>
@@ -26,7 +27,7 @@
 
 ## 👋 Intro
 
-Offers an App built i nReact
+Offers an interactive user interface built in <a href="https://reactjs.org/"><b>React</b></a>. I have used component based building to manage states in order to create a relativly complex UI. I have also used <a href="https://react-icons.github.io/react-icons/"><b>React Icons</b></a> and <a href="https://react-bootstrap.github.io/"><b>React Bootstrap</b></a>
 
 ---
 
@@ -41,11 +42,14 @@ Offers an App built i nReact
 * Run this code in your terminal:
 
         npm i
+        npm start
 
+#### Minimum Node.js 
+* Node.js >= 17.2
     
 
 ## 👊 Further Help?
-This is my first public back-end project feel free to email me any questions , advices regarding this project <br />
+This is my first public front-end project feel free to email me any questions , advices regarding this project <br />
 Created by Raymund Noel Gyuris <br />
 contact me via e-mail RaymundTech@protonmail.com <br/>
 
