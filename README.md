@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://www.freecodecamp.org/news/content/images/2021/06/Ekran-Resmi-2019-11-18-18.08.13.png" alt="ReactJS LOGO" width="400" />
+  <img src="https://www.freecodecamp.org/news/content/images/2021/06/Ekran-Resmi-2019-11-18-18.08.13.png" alt="ReactJS LOGO" width="500" />
   <p></p>
   <h1>NC News</h1>
   <p></p>
@@ -25,7 +25,7 @@
 
 ## 👋 Intro
 
-Offers an App built i nReact
+Offers an interactive UI for users built in React.
 
 ---
 
