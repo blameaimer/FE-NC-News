@@ -46,9 +46,7 @@ p {
 .cooking-icon {
   margin-right: 1em;
 }
-div.card-footer {
-  padding-bottom: 15px;
-}
+
 .date-main {
   color: rgb(0, 153, 255);
   font-size: 13px;
@@ -109,10 +107,11 @@ select {
 }
 div.card-body {
   padding: 0px;
+  text-align: left;
+  padding-left: 0.7em;
+  padding-bottom: 1em;
 }
-div.card-footer {
-  padding-bottom: 6px;
-}
+
 .user {
   padding-top: 0.5em;
 }
