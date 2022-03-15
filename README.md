@@ -4,9 +4,9 @@
   <h1>NC News</h1>
   <p></p>
   <sup>
-[![Netlify Status](https://api.netlify.com/api/v1/badges/66db1868-1862-420e-8c0a-a039422bbddc/deploy-status)](https://app.netlify.com/sites/nc-news-blame/deploys)
     <a href="https://app.netlify.com/sites/nc-news-blame/deploys>
       <img src=https://api.netlify.com/api/v1/badges/66db1868-1862-420e-8c0a-a039422bbddc/deploy-status />
+             </a>
   </sup>
   <br />
   <p align="center">
