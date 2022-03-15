@@ -16,6 +16,7 @@
     <a href="#-getting-started"><b>Usage</b></a>
     &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
     <a href="#-further-help"><b>Need help?</b></a>
+    <a href="https://github.com/blameaimer/Hosting-NC-NEWS"><b>My API</b></a>
   </p>
   <br />
 </div>
@@ -25,7 +26,7 @@
 
 ## 👋 Intro
 
-Offers an interactive UI for users built in React.
+Offers an interactive user interface built in React. I have used component based building to manage states in order to create a relativly complex UI. 
 
 ---
 
@@ -40,11 +41,12 @@ Offers an interactive UI for users built in React.
 * Run this code in your terminal:
 
         npm i
+        npm start
 
     
 
 ## 👊 Further Help?
-This is my first public back-end project feel free to email me any questions , advices regarding this project <br />
+This is my first public front-end project feel free to email me any questions , advices regarding this project <br />
 Created by Raymund Noel Gyuris <br />
 contact me via e-mail RaymundTech@protonmail.com <br/>
 
