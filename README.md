@@ -4,9 +4,7 @@
   <h1>NC News</h1>
   <p></p>
   <sup>
-    <a href="https://github.com/blameaimer/FE-NC-News/actions">
-      <img src="[![Netlify Status](https://api.netlify.com/api/v1/badges/66db1868-1862-420e-8c0a-a039422bbddc/deploy-status)](https://app.netlify.com/sites/nc-news-blame/deploys) />
-    </a>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/66db1868-1862-420e-8c0a-a039422bbddc/deploy-status)](https://app.netlify.com/sites/nc-news-blame/deploys)
   </sup>
   <br />
   <p align="center">
