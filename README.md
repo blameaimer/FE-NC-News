@@ -27,7 +27,7 @@
 
 ## 👋 Intro
 
-Offers an interactive user interface built in <a href="https://reactjs.org/"><b>React</b></a>. I have used component based building to manage states in order to create a relativly complex UI. 
+Offers an interactive user interface built in <a href="https://reactjs.org/"><b>React</b></a>. I have used component based building to manage states in order to create a relativly complex UI. I have also used <a href="https://react-icons.github.io/react-icons/"><b>React Icons</b></a> and <a href="https://react-bootstrap.github.io/"><b>React Bootstrap</b></a>
 
 ---
 
