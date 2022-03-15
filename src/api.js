@@ -28,16 +28,6 @@ export const updateVote = (id, vote) => {
     });
 };
 
-export const updateCommentVote = (id, vote) => {
-  return newsApi
-    .patch(`/comments/${id}`, {
-      vote: vote,
-    })
-    .then(({ data }) => {
-      return data.comment;
-    });
-};
-
 export const selectArticel = (id) => {
   return newsApi.get(`articles/${id}`).then(({ data }) => {
     return data.article;

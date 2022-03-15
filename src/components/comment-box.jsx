@@ -53,13 +53,6 @@ export default function Commentbox({ comments, setComments, ArticleId }) {
           </p>
         </Card.Title>
         <Card.Body>{comment.body}</Card.Body>
-        <Card.Footer className="comment-footer">
-          <BiUpvote className="upvote" />
-
-          {comment.votes}
-
-          <BiDownvote className="downvote" />
-        </Card.Footer>
       </Card>
     );
   });
