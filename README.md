@@ -16,6 +16,7 @@
     <a href="#-getting-started"><b>Usage</b></a>
     &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
     <a href="#-further-help"><b>Need help?</b></a>
+    &nbsp;&nbsp;&mdash;&nbsp;&nbsp;
     <a href="https://github.com/blameaimer/Hosting-NC-NEWS"><b>My API</b></a>
   </p>
   <br />
