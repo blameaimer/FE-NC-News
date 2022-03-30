@@ -19,7 +19,6 @@ export const PostComment = ({ id, setComments }) => {
     setPosted(true);
     insertComment(id, commentForApi)
       .then(({ comment }) => {
-        console.log(comment);
         setComments((currComments) => {
           return [comment, ...currComments];
         });

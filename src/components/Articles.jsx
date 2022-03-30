@@ -4,22 +4,20 @@ import { ArticelCard } from "./Articel-card";
 import { useParams } from "react-router-dom";
 import ErrorPage from "./ErrorPage";
 import NavBar from "./NavBar";
+import { Spinner } from "react-bootstrap";
 export default function ArticlesList() {
   let { topic } = useParams();
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
   const [sortBy, setNewSortBy] = useState(null);
   const [orderBy, setNewOrderBy] = useState(null);
   const [err, setErr] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
-
     selectArticles(topic, sortBy, orderBy)
       .then((articles) => {
         setArticles(articles);
-
         setIsLoading(false);
       })
       .catch(() => {
@@ -45,17 +43,20 @@ export default function ArticlesList() {
   };
 
   if (err) return <ErrorPage />;
+
   return (
     <>
       <nav>
         <NavBar topic={topic} />
       </nav>
-
       {isLoading ? (
-        <p>loading..</p>
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
       ) : (
         <section>
           <select
+            className="sortby"
             onChange={(event) => {
               handleSort(event);
             }}
@@ -69,6 +70,7 @@ export default function ArticlesList() {
           </select>
 
           <select
+            className="orderby"
             onChange={(event) => {
               handleOrder(event);
             }}
