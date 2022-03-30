@@ -12,6 +12,8 @@ export const ArticelCard = ({ article }) => {
   const [downvote, setDownvote] = useState(null);
   const [err, setErr] = useState(null);
   const handleUpVote = (id) => {
+    setUpvote(() => !upvote);
+
     if (downvote) {
       setVote((currVote) => currVote + 2);
       updateVote(id, 2).catch((error) => {
@@ -23,10 +25,16 @@ export const ArticelCard = ({ article }) => {
         setErr("Something went wrong, please try again.");
       });
     }
-    setUpvote(true);
+    if (upvote) {
+      setVote((currVote) => currVote - 2);
+      updateVote(id, -2).catch((error) => {
+        setErr("Something went wrong, please try again.");
+      });
+    }
     setDownvote(null);
   };
   const handleDownVote = (id) => {
+    setDownvote(() => !downvote);
     if (upvote) {
       setVote((currVote) => currVote - 2);
       updateVote(id, -2).catch((error) => {
@@ -38,7 +46,12 @@ export const ArticelCard = ({ article }) => {
         setErr("Something went wrong, please try again.");
       });
     }
-    setDownvote(true);
+    if (downvote) {
+      setVote((currVote) => currVote + 2);
+      updateVote(id, +2).catch((error) => {
+        setErr("Something went wrong, please try again.");
+      });
+    }
     setUpvote(null);
   };
   if (err) return <ErrorPage />;
@@ -72,8 +85,9 @@ export const ArticelCard = ({ article }) => {
           <MdOutlineCreate />
           {article.author}
           <Button
-            disabled={upvote}
-            onClick={() => handleUpVote(article.article_id)}
+            onClick={() => {
+              handleUpVote(article.article_id);
+            }}
             variant="dark"
           >
             {" "}
@@ -81,7 +95,6 @@ export const ArticelCard = ({ article }) => {
           </Button>
           {vote}
           <Button
-            disabled={downvote}
             onClick={() => handleDownVote(article.article_id)}
             variant="dark"
           >

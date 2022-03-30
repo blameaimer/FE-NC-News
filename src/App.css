@@ -1,3 +1,94 @@
+@media only screen and (min-width: 820px) {
+  .App {
+    text-align: center;
+    font-size: 1.2em;
+  }
+  section {
+    padding-top: 65px;
+    margin-bottom: 60px;
+    background-color: #212529;
+    padding-left: 15%;
+    padding-right: 15%;
+    font-size: 0.8em;
+  }
+  p.title-main {
+    color: rgb(0, 183, 255);
+    font-size: 1.8em;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-left: 0.5em;
+  }
+  p.date-main {
+    color: rgb(0, 153, 255);
+    font-size: 1.2em;
+    text-align: right;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-left: 1.2em;
+  }
+  p.title {
+    color: rgb(0, 183, 255);
+    font-size: 1.8em;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-left: 0.5em;
+    margin-top: 1em;
+  }
+  p.date {
+    color: rgb(0, 153, 255);
+    font-size: 1.2em;
+    text-align: right;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-left: 1.2em;
+  }
+
+  p.author-comments {
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  a.coding.nav-link {
+    margin-left: 28vmax;
+  }
+  div.card-body {
+    text-align: center;
+  }
+  select.sortby {
+    color: blueviolet;
+  }
+  select.orderby {
+    padding-left: 2em;
+  }
+  .input-comment {
+    background-color: rgba(0, 0, 0, 0);
+    color: cornflowerblue;
+    border-color: rgb(31, 30, 30);
+    border-radius: 1em;
+  }
+  label.form-label {
+    padding-left: 35%;
+  }
+  p.card-text {
+    text-align: center;
+  }
+  p.comment-author {
+    font-size: 0.8em;
+  }
+  svg.comment-icon {
+    padding: 0;
+    margin: 0;
+    margin-left: 0.5em;
+    margin-right: 0.3em;
+    width: 1em;
+  }
+}
+div.spinner-border {
+  margin-top: 30%;
+  color: rgb(0, 183, 255);
+}
 .App {
   text-align: center;
   background-color: #212529;
@@ -6,7 +97,6 @@
 body {
   background-color: #212529;
 }
-
 section {
   padding-top: 65px;
   margin-bottom: 60px;
@@ -117,7 +207,6 @@ div.card-body {
 }
 .upvote {
   color: rgb(212, 0, 255);
-  margin-left: 1em;
 }
 
 .downvote {

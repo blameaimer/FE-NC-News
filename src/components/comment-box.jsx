@@ -1,6 +1,5 @@
 import { Card, Button } from "react-bootstrap";
 import { MdUpdate, MdDelete } from "react-icons/md";
-import { BiUpvote, BiDownvote } from "react-icons/bi";
 import { deleteComment, selectComments } from "../api";
 import { useState } from "react";
 import { UserContext } from "./User";

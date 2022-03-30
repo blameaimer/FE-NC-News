@@ -6,7 +6,7 @@ import NavBar from "./NavBar";
 import ErrorPage from "./ErrorPage";
 import Commentbox from "./comment-box";
 import { PostComment } from "./post-comment";
-
+import { Spinner } from "react-bootstrap";
 export default function Articel() {
   let { id, topic } = useParams();
   const [articel, setArticel] = useState([]);
@@ -41,7 +41,9 @@ export default function Articel() {
       </nav>
 
       {isLoading ? (
-        <p>loading..</p>
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
       ) : (
         <section>
           <ArticelCard article={articel} />

@@ -34,16 +34,16 @@ export default function NavBarTop({ topic = "" }) {
               </b>
             </Nav.Link>
 
-            <Nav.Link href="/articles/coding">
+            <Nav.Link className="coding" href="/articles/coding">
               Coding <BiCodeAlt className="code-icon" size={20} />
             </Nav.Link>
-            <Nav.Link href="/articles/football">
+            <Nav.Link className="footy" href="/articles/football">
               Football <IoMdFootball className="footy-icon" size={20} />
             </Nav.Link>
-            <Nav.Link href="/articles/cooking">
+            <Nav.Link className="cooking" href="/articles/cooking">
               Cooking <GiCookingPot className="cooking-icon" size={20} />
             </Nav.Link>
-            <Nav.Link href="/articles/all">
+            <Nav.Link className="all" href="/articles/all">
               All <GiWorld className="all-icon" size={20} />
             </Nav.Link>
           </Nav>
