@@ -4,7 +4,7 @@
   <h1>NC News</h1>
   <p></p>
   <sup>
-    <a href="https://nc-news-blame.netlify.app/">   <img src="https://api.netlify.com/api/v1/badges/66db1868-1862-420e-8c0a-a039422bbddc/deploy-status" alt="Netlifystatus"/></a>
+    <a href="https://nc-news-blamex.netlify.app/">   <img src="https://api.netlify.com/api/v1/badges/02eea650-0a8d-4542-b92e-685996c82c9a/deploy-status" alt="Netlifystatus"/></a>
    
   </sup>
   <br />
