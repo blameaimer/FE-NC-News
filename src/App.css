@@ -55,6 +55,19 @@
   }
   div.card-body {
     text-align: center;
+    border-color: #212529;
+    background-color: #212529;
+  }
+  div.card-header {
+    border-color: #212529;
+    background-color: #212529;
+  }
+  div.card-footer {
+    border-color: #212529;
+    background-color: #212529;
+  }
+  div.card {
+    background-color: #212529;
   }
   select.sortby {
     color: blueviolet;
@@ -175,14 +188,35 @@ select {
 }
 .author-comments {
   text-align: left;
-  color: rgb(212, 0, 255);
+  color: rgb(0, 183, 255);
   font-size: 1em;
-  padding-left: 1em;
 }
 .comment-footer {
-  text-align: right;
-  color: rgb(212, 0, 255);
+  text-align: center;
+  color: rgb(0, 183, 255);
   font-size: 1em;
+}
+div.comment-footer.card-footer {
+  margin: 0;
+  padding: 0;
+
+  border-color: #212529;
+}
+div.card-body {
+  text-align: center;
+  border-color: #212529;
+  background-color: #212529;
+}
+div.card-header {
+  border-color: #212529;
+  background-color: #212529;
+}
+div.card-footer {
+  border-color: #212529;
+  background-color: #212529;
+}
+div.card {
+  background-color: #212529;
 }
 
 .comment-icon {
@@ -190,6 +224,7 @@ select {
   width: 10%;
 }
 .comment-author {
+  border-color: #212529;
   color: rgb(0, 183, 255);
   text-align: left;
   padding-left: 0.7em;
@@ -200,17 +235,26 @@ div.card-body {
   text-align: left;
   padding-left: 0.7em;
   padding-bottom: 1em;
+  border-color: #212529;
+  border-color: #212529;
 }
 
-.user {
+p.user {
   padding-top: 0.5em;
 }
 .upvote {
-  color: rgb(212, 0, 255);
+  color: rgb(0, 255, 136);
 }
 
 .downvote {
-  color: rgb(212, 0, 255);
+  color: rgb(255, 0, 98);
+}
+.commentupvote {
+  color: rgb(0, 255, 136);
+}
+
+.commentdownvote {
+  color: rgb(255, 0, 98);
 }
 
 .Welcome {

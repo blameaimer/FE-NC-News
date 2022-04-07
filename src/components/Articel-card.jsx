@@ -1,7 +1,12 @@
 import { Card, Button } from "react-bootstrap";
 import { FaRegCommentDots } from "react-icons/fa";
 import { MdOutlineCreate, MdUpdate } from "react-icons/md";
-import { BiUpvote, BiDownvote } from "react-icons/bi";
+import {
+  BsHandThumbsUpFill,
+  BsHandThumbsUp,
+  BsFillHandThumbsDownFill,
+  BsHandThumbsDown,
+} from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { updateVote } from "../api";
@@ -90,15 +95,22 @@ export const ArticelCard = ({ article }) => {
             }}
             variant="dark"
           >
-            {" "}
-            <BiUpvote className="upvote" />
+            {upvote ? (
+              <BsHandThumbsUpFill className="upvote" />
+            ) : (
+              <BsHandThumbsUp className="upvote" />
+            )}
           </Button>
           {vote}
           <Button
             onClick={() => handleDownVote(article.article_id)}
             variant="dark"
           >
-            <BiDownvote className="downvote" />
+            {downvote ? (
+              <BsFillHandThumbsDownFill className="downvote" />
+            ) : (
+              <BsHandThumbsDown className="downvote" />
+            )}
           </Button>
 
           <Link

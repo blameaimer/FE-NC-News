@@ -48,11 +48,16 @@ export default function Articel() {
         <section>
           <ArticelCard article={articel} />
           <PostComment id={articel.article_id} setComments={setComments} />
-          <Commentbox
-            comments={comments}
-            setComments={setComments}
-            ArticleId={id}
-          />
+          {comments.map((comment) => {
+            return (
+              <Commentbox
+                comment={comment}
+                setComments={setComments}
+                ArticleId={id}
+                key={comment.comment_id}
+              />
+            );
+          })}
         </section>
       )}
     </>
